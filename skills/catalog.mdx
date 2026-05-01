@@ -1,0 +1,48 @@
+---
+title: "Skill Catalog"
+description: "The public Bounty skill set and when each skill should be used."
+---
+
+# Skill Catalog
+
+The Bounty skill set is organized by marketing workflow.
+
+| Skill | Use when |
+| --- | --- |
+| `bounty-cli` | You need the broad authenticated CLI workflow or are not sure which specific Bounty skill applies. |
+| `bounty-campaigns` | The task is about campaign lists, campaign details, spend, conversion performance, platform filtering, or campaign status. |
+| `bounty-ads` | The task is about specific ads, top or weak ads, ad spend, CTR, CPC, frequency, status, or fatigue signals. |
+| `bounty-creatives` | The task is about creative analytics, hook rate, hold rate, frequency, video completion, or daily creative performance. |
+| `bounty-actions` | The task is about generated marketing actions, action status, verdicts, owners, ICE scores, or proposed action detail. |
+| `bounty-agents` | The task is about configured agent definitions, system agents, triggers, output types, or agent context. |
+| `bounty-campaign-analysis` | The task asks for prioritized findings, evidence, or recommendations for one campaign. |
+
+## Common Command Pairings
+
+Campaign diagnosis:
+
+```bash
+bounty-cli campaigns list --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+bounty-cli campaign analyze <campaignId> --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+Ad inspection:
+
+```bash
+bounty-cli ads list --sort-by spend --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+bounty-cli ads show <adId> --platform facebook --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+Creative fatigue:
+
+```bash
+bounty-cli creatives analytics --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+bounty-cli creatives fatigue <adId> --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+Action review:
+
+```bash
+bounty-cli actions list --status backlog --json
+bounty-cli actions show <actionId> --json
+```

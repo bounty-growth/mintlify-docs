@@ -1,0 +1,43 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Bounty",
+  "description": "Public documentation for Bounty's marketing operations CLI and AI agent skills.",
+  "colors": {
+    "primary": "#1C7ED6",
+    "light": "#339AF0",
+    "dark": "#1864AB"
+  },
+  "seo": {
+    "indexing": "navigable"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": ["index", "quickstart"]
+      },
+      {
+        "group": "CLI",
+        "pages": [
+          "cli/installation",
+          "cli/authentication",
+          "cli/commands"
+        ]
+      },
+      {
+        "group": "Agent Skills",
+        "pages": [
+          "skills/overview",
+          "skills/installing",
+          "skills/catalog",
+          "skills/workflows"
+        ]
+      },
+      {
+        "group": "Safety",
+        "pages": ["guides/security", "guides/contributing"]
+      }
+    ]
+  }
+}

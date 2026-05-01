@@ -1,0 +1,32 @@
+---
+title: "Agent Skills"
+description: "How Bounty skills teach AI coding agents to use bounty-cli safely."
+---
+
+# Agent Skills
+
+Bounty publishes AI agent skills that describe how to use `bounty-cli` for marketing operations. Skills are workflow instructions. They do not grant extra permissions or include private credentials.
+
+## What Skills Do
+
+Skills help agents:
+
+- Pick the right CLI command for the user's question.
+- Use explicit date ranges for performance questions.
+- Prefer `--json` when output will be parsed or cited.
+- Start with list commands before detail commands.
+- Avoid asking for infrastructure secrets.
+
+## Public Discovery
+
+When this Mintlify site is deployed publicly, agents can discover the root skill and the full skill catalog through:
+
+```text
+/skill.md
+/.well-known/agent-skills/index.json
+/.well-known/skills/index.json
+```
+
+## Skill Boundaries
+
+Skills are instructions, not credentials. They make agent behavior more reliable, but the CLI still requires the user to authenticate and all requests still run with that user's permissions.

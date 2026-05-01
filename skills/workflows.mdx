@@ -1,0 +1,65 @@
+---
+title: "Agent Workflows"
+description: "Practical workflows for agents using Bounty CLI skills."
+---
+
+# Agent Workflows
+
+These workflows are the patterns the Bounty skills encourage agents to follow.
+
+## Campaign Performance Scan
+
+1. Confirm authentication with `bounty-cli whoami`.
+2. Run `campaigns list` with a clear date range.
+3. Sort or filter campaigns from JSON output.
+4. Use `campaigns show` only for campaigns that need detail.
+5. Summarize the evidence, including the date range used.
+
+```bash
+bounty-cli campaigns list --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+## One-Campaign Diagnosis
+
+1. Find or confirm the campaign id.
+2. Run the campaign analysis tool with explicit dates.
+3. Report findings in priority order.
+4. Include evidence and confidence when present.
+
+```bash
+bounty-cli campaign analyze <campaignId> --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+## Creative Fatigue Review
+
+1. Use `creatives analytics` to compare creatives.
+2. Pick a candidate ad by spend, frequency, hook rate, hold rate, CTR, or user direction.
+3. Use `creatives fatigue` for daily fatigue signals.
+4. Avoid declaring fatigue from one metric alone.
+
+```bash
+bounty-cli creatives analytics --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+bounty-cli creatives fatigue <adId> --start-date YYYY-MM-DD --end-date YYYY-MM-DD --json
+```
+
+## Generated Action Review
+
+1. List actions with status and verdict filters when useful.
+2. Check stale actions before recommending execution.
+3. Use `actions show` for one action's plan, evidence, notes, and payload.
+
+```bash
+bounty-cli actions list --status backlog --verdict accepted --json
+bounty-cli actions show <actionId> --json
+```
+
+## Agent Inventory
+
+1. Run `agents list --json` for a concise inventory.
+2. Use `agents list --full --json` when definitions matter.
+3. Use `agents show` for one exact agent.
+
+```bash
+bounty-cli agents list --json
+bounty-cli agents show <agentId> --json
+```

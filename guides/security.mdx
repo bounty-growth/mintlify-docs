@@ -1,0 +1,53 @@
+---
+title: "Security"
+description: "How Bounty keeps CLI and agent workflows inside normal authenticated user permissions."
+---
+
+# Security
+
+Bounty's CLI and skills are designed for safe agent workflows. The agent receives workflow instructions and authenticated access through the user's session, not privileged infrastructure credentials.
+
+## What The CLI Can Access
+
+The CLI can request Bounty product data using the logged-in user's permissions:
+
+- Campaigns
+- Ads
+- Creative analytics
+- Generated actions
+- Agent definitions
+- Campaign analysis tools
+
+## What The CLI Does Not Need
+
+Do not give agents any of the following for normal Bounty CLI workflows:
+
+- Database credentials
+- Warehouse credentials
+- Ad platform credentials
+- Infrastructure secrets
+- Local environment files
+
+## Session Storage
+
+The CLI stores a local user session so future commands can run without repeating browser login.
+
+Run this command to clear the stored session:
+
+```bash
+bounty-cli logout
+```
+
+## Backend URL Safety
+
+The CLI accepts secure remote backend URLs and local development URLs. It rejects insecure non-local HTTP URLs.
+
+## Agent Guidance
+
+Agents should:
+
+- Use `bounty-cli whoami` before sensitive work.
+- Use `--json` for parseable evidence.
+- State the date range used for performance claims.
+- Ask the user to authenticate with `bounty-cli login` when needed.
+- Avoid requesting infrastructure secrets.

@@ -1,0 +1,65 @@
+---
+title: "Install the CLI"
+description: "Install and run bounty-cli from npm, or run it without a global install."
+---
+
+# Install The CLI
+
+The package name and installed binary are both `bounty-cli`.
+
+## Run With npx
+
+```bash
+npx -y bounty-cli@latest login
+npx -y bounty-cli@latest whoami
+npx -y bounty-cli@latest campaigns list --json
+```
+
+## Recommended Agent Setup
+
+For AI coding agents, install skills and authenticate in one command:
+
+```bash
+npx -y bounty-cli@latest init --all --browser
+```
+
+Use `--agent` to target one agent:
+
+```bash
+npx -y bounty-cli@latest init --agent codex --browser
+```
+
+Supported agent targets:
+
+| Target | Aliases |
+| --- | --- |
+| `codex` | `codex` |
+| `claude-code` | `claude`, `claude-code` |
+| `cursor` | `cursor` |
+| `windsurf` | `windsurf` |
+| `opencode` | `opencode`, `open-code` |
+| `gemini-cli` | `gemini`, `gemini-cli` |
+
+## Global Install
+
+```bash
+npm install -g bounty-cli
+bounty-cli login
+bounty-cli whoami
+```
+
+## Backend Target
+
+Installed usage targets:
+
+```text
+https://app.bountygrowth.com
+```
+
+Override the backend only when directed by Bounty support:
+
+```bash
+BOUNTY_API_URL=https://app.bountygrowth.com bounty-cli whoami
+```
+
+The CLI rejects insecure non-local HTTP URLs.

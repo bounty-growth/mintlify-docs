@@ -1,0 +1,86 @@
+---
+title: "Command Reference"
+description: "Reference for bounty-cli auth, config, setup, campaign, ad, creative, action, and agent commands."
+---
+
+# Command Reference
+
+Prefer `--json` when another tool or agent will parse the output.
+
+## Auth
+
+```bash
+bounty-cli login
+bounty-cli login --email <email>
+bounty-cli logout
+bounty-cli whoami [--json]
+```
+
+## Config
+
+```bash
+bounty-cli config get [--json]
+bounty-cli config set api-url <url>
+```
+
+## Setup
+
+```bash
+bounty-cli init [--all] [--browser] [--agent <agent>] [--skip-auth] [--skip-skills]
+bounty-cli setup skills [--agent <agent>] [--all]
+```
+
+`init` installs skills unless `--skip-skills` is set and starts browser login unless `--skip-auth` is set.
+
+## Campaigns
+
+```bash
+bounty-cli campaigns list [--status <status>] [--platform <platform>] [--start-date <date>] [--end-date <date>] [--json]
+bounty-cli campaigns show <campaignId> [--start-date <date>] [--end-date <date>] [--json]
+```
+
+Use `campaigns list` first when you need ids, platforms, status, spend, or a quick performance scan.
+
+## Campaign Analysis
+
+```bash
+bounty-cli campaign analyze <campaignId> --start-date <date> --end-date <date> [--wait] [--json]
+```
+
+`campaign analyze` returns prioritized findings for one campaign. It currently returns synchronously; `--wait` is accepted for command compatibility.
+
+## Ads
+
+```bash
+bounty-cli ads list --start-date <date> --end-date <date> [--status <status>] [--sort-by spend|impressions|clicks|ctr|cpc] [--json]
+bounty-cli ads show <adId> [--platform facebook] [--start-date <date>] [--end-date <date>] [--json]
+```
+
+Use `ads list` for ranking and discovery, then `ads show` for full detail on one ad.
+
+## Creatives
+
+```bash
+bounty-cli creatives analytics --start-date <date> --end-date <date> [--json]
+bounty-cli creatives fatigue <adId> --start-date <date> --end-date <date> [--json]
+```
+
+Use creative analytics for broad comparisons. Use fatigue for daily frequency and CTR on one ad.
+
+## Actions
+
+```bash
+bounty-cli actions list [--status <status>] [--verdict <verdict>] [--order-by <field>] [--include-stale] [--full] [--json]
+bounty-cli actions show <actionId> [--json]
+```
+
+List output is concise by default. Add `--full --json` only when raw action objects are necessary.
+
+## Agents
+
+```bash
+bounty-cli agents list [--full] [--json]
+bounty-cli agents show <agentId> [--json]
+```
+
+Use `agents list --json` for a concise inventory. Use `--full` or `agents show` when prompt, context, trigger, or output details matter.

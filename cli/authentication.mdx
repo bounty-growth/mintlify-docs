@@ -1,0 +1,70 @@
+---
+title: "Authentication"
+description: "How browser login, local sessions, and user permissions work in bounty-cli."
+---
+
+# Authentication
+
+`bounty-cli` uses a normal Bounty user session. It does not require infrastructure credentials.
+
+## Browser Login
+
+```bash
+bounty-cli login
+```
+
+The browser flow:
+
+1. The CLI starts a temporary local callback.
+2. The browser opens the Bounty CLI authorization page.
+3. If needed, Bounty sends you through normal login.
+4. You explicitly approve CLI access.
+5. The browser returns a one-time code to the local callback.
+6. The CLI exchanges the code for a user session.
+7. The CLI stores the session locally for future commands.
+
+The callback receives only a one-time code and state value.
+
+## Verify Identity
+
+```bash
+bounty-cli whoami
+bounty-cli whoami --json
+```
+
+The response includes your user, organization, and organization id.
+
+## Log Out
+
+```bash
+bounty-cli logout
+```
+
+This clears the locally stored Bounty CLI session.
+
+## Email Login Fallback
+
+Browser login is recommended. Email/password login is available for development and fallback cases:
+
+```bash
+bounty-cli login --email user@example.com
+```
+
+## Config
+
+View active config:
+
+```bash
+bounty-cli config get
+bounty-cli config get --json
+```
+
+Set a backend URL:
+
+```bash
+bounty-cli config set api-url https://app.bountygrowth.com
+```
+
+## Permission Model
+
+CLI requests run with the logged-in user's Bounty permissions. If you cannot access an organization or object in Bounty, the CLI should not expose it either.

@@ -1,0 +1,45 @@
+---
+title: "Bounty Docs"
+description: "Use Bounty's authenticated marketing operations CLI and AI agent skills."
+---
+
+# Bounty Docs
+
+Bounty helps marketing teams and AI agents inspect paid performance, creative fatigue, campaign details, generated actions, and agent workflows from the terminal.
+
+These docs cover two public surfaces:
+
+- `bounty-cli`, the authenticated command line interface for marketing operations.
+- Bounty agent skills, which teach AI coding agents how to use the CLI safely and consistently.
+
+## Start Here
+
+Install the CLI skills and authenticate in one step:
+
+```bash
+npx -y bounty-cli@latest init --all --browser
+```
+
+Then restart your AI coding agent so it can discover the installed skills.
+
+## What You Can Do
+
+- List and inspect campaigns, ads, and creative performance.
+- Diagnose one campaign with prioritized findings and evidence.
+- Review generated marketing actions, ICE scores, owners, and verdicts.
+- Inspect configured Bounty agents and their context.
+- Give AI agents a constrained workflow that uses normal user permissions.
+
+## Principles
+
+- Use the logged-in user's Bounty permissions.
+- Prefer machine-readable `--json` output for agent workflows.
+- Use explicit date ranges for performance claims.
+- Keep private infrastructure credentials out of agent context.
+
+## Next Steps
+
+- [Quickstart](/quickstart)
+- [Install the CLI](/cli/installation)
+- [Install agent skills](/skills/installing)
+- [Review the command reference](/cli/commands)

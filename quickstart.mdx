@@ -1,0 +1,55 @@
+---
+title: "Quickstart"
+description: "Install Bounty CLI skills, authenticate, and verify access."
+---
+
+# Quickstart
+
+Use this path when you want an AI coding agent to work with Bounty marketing data through the CLI.
+
+## Prerequisites
+
+- Node.js 20 or later.
+- A Bounty account with access to the organization you want to inspect.
+- An AI coding agent that can load skills, such as Codex, Claude Code, Cursor, Windsurf, OpenCode, or Gemini CLI.
+
+## 1. Run Setup
+
+```bash
+npx -y bounty-cli@latest init --all --browser
+```
+
+This command:
+
+- Installs Bounty marketing skills into detected AI coding agents.
+- Opens browser login for CLI authentication.
+- Stores a local user session for future CLI commands.
+
+## 2. Restart Your Agent
+
+Restart your AI coding agent after setup completes. Most agents discover new skills only during startup.
+
+## 3. Verify Access
+
+```bash
+bounty-cli whoami
+bounty-cli campaigns list --json
+```
+
+If the CLI says you are not logged in, run:
+
+```bash
+bounty-cli login
+```
+
+## 4. Ask A Marketing Question
+
+Examples:
+
+- "Which campaigns spent the most last week?"
+- "Find weak ads from the last 30 days."
+- "Check whether this creative is fatiguing."
+- "Show me generated actions that are accepted but not live."
+- "Analyze this campaign and return prioritized findings."
+
+The installed skills steer the agent toward the right `bounty-cli` commands and JSON output.
