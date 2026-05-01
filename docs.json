@@ -9,7 +9,10 @@
     "dark": "#1864AB"
   },
   "seo": {
-    "indexing": "navigable"
+    "indexing": "navigable",
+    "metatags": {
+      "canonical": "https://docs.bountygrowth.com"
+    }
   },
   "navigation": {
     "groups": [
