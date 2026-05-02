@@ -41,7 +41,7 @@
       },
       {
         "group": "Safety",
-        "pages": ["guides/security", "guides/contributing"]
+        "pages": ["guides/security"]
       }
     ]
   }
