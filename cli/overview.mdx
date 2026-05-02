@@ -1,0 +1,44 @@
+---
+title: "CLI Overview"
+description: "Use Bounty's authenticated marketing operations CLI and AI agent skills."
+---
+
+# CLI Overview
+
+`bounty-cli` gives operators and AI coding agents a terminal-safe way to inspect Bounty data without direct database, warehouse, or infrastructure access.
+
+The CLI is one public surface of Bounty. It connects to the Bounty app using the logged-in user's permissions, then exposes focused commands for marketing workflows.
+
+## What The CLI Covers
+
+- Campaign, ad, and creative performance inspection.
+- One-campaign diagnosis with prioritized findings and evidence.
+- Generated action review, including ICE scores, owners, statuses, and verdicts.
+- Agent inventory and configuration inspection.
+- Skill installation for AI coding agents that should use the CLI consistently.
+
+## Agent Skills
+
+Bounty agent skills are workflow instructions for AI coding agents. They help agents pick the right `bounty-cli` command, use explicit date ranges, prefer JSON output, and avoid asking for private infrastructure credentials.
+
+Install the CLI skills and authenticate in one step:
+
+```bash
+npx -y bounty-cli@latest init --all --browser
+```
+
+Then restart your AI coding agent so it can discover the installed skills.
+
+## Principles
+
+- Use the logged-in user's Bounty permissions.
+- Prefer machine-readable `--json` output for agent workflows.
+- Use explicit date ranges for performance claims.
+- Keep private infrastructure credentials out of agent context.
+
+## Next Steps
+
+- [CLI quickstart](/cli/quickstart)
+- [Install the CLI](/cli/installation)
+- [Install agent skills](/skills/installing)
+- [Review the command reference](/cli/commands)

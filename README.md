@@ -1,6 +1,6 @@
 # Bounty Docs
 
-Public Mintlify documentation for Bounty's marketing operations CLI and AI agent skills.
+Public Mintlify documentation for the Bounty app, marketing operations CLI, and AI agent skills.
 
 ## Local Preview
 

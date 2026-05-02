@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
   "name": "Bounty",
-  "description": "Public documentation for Bounty's marketing operations CLI and AI agent skills.",
+  "description": "Public documentation for the Bounty app, marketing operations CLI, and AI agent skills.",
   "colors": {
     "primary": "#1C7ED6",
     "light": "#339AF0",
@@ -17,12 +17,14 @@
   "navigation": {
     "groups": [
       {
-        "group": "Get Started",
+        "group": "Bounty App",
         "pages": ["index", "quickstart"]
       },
       {
         "group": "CLI",
         "pages": [
+          "cli/overview",
+          "cli/quickstart",
           "cli/installation",
           "cli/authentication",
           "cli/commands"

@@ -1,45 +1,39 @@
 ---
-title: "Bounty Docs"
-description: "Use Bounty's authenticated marketing operations CLI and AI agent skills."
+title: "Bounty"
+description: "Bounty is the marketing analytics and growth operations app for connected data, campaign insight, actions, agents, and chat."
 ---
 
-# Bounty Docs
+# Bounty
 
-Bounty helps marketing teams and AI agents inspect paid performance, creative fatigue, campaign details, generated actions, and agent workflows from the terminal.
+Bounty is the web app for marketing analytics and growth operations. It helps teams connect marketing data, define metrics, inspect paid performance, analyze campaigns, manage growth actions, run agents, and ask questions through AI chat.
 
-These docs cover two public surfaces:
+The CLI is a companion surface for terminal and agent workflows. The main product experience is the Bounty app at `app.bountygrowth.com`.
 
-- `bounty-cli`, the authenticated command line interface for marketing operations.
-- Bounty agent skills, which teach AI coding agents how to use the CLI safely and consistently.
+## Product Areas
+
+- Analytics home for key metrics, trends, and growth levers.
+- Metrics and driver trees for modeling business performance.
+- Campaign and ad views for paid performance across connected platforms.
+- Actions for planning, tracking, and analyzing growth work.
+- Agents for repeatable analysis and post-sync workflows.
+- Chat for exploring data and asking follow-up questions.
+- Connections and settings for organization data setup.
 
 ## Start Here
 
-Install the CLI skills and authenticate in one step:
+Use the Bounty app quickstart when you are onboarding a team or setting up a workspace.
 
-```bash
-npx -y bounty-cli@latest init --all --browser
-```
+Use the CLI quickstart when you want an AI coding agent or terminal workflow to query Bounty with normal user permissions.
 
-Then restart your AI coding agent so it can discover the installed skills.
+## Public Surfaces
 
-## What You Can Do
-
-- List and inspect campaigns, ads, and creative performance.
-- Diagnose one campaign with prioritized findings and evidence.
-- Review generated marketing actions, ICE scores, owners, and verdicts.
-- Inspect configured Bounty agents and their context.
-- Give AI agents a constrained workflow that uses normal user permissions.
-
-## Principles
-
-- Use the logged-in user's Bounty permissions.
-- Prefer machine-readable `--json` output for agent workflows.
-- Use explicit date ranges for performance claims.
-- Keep private infrastructure credentials out of agent context.
+- The Bounty app, which is the primary product experience.
+- `bounty-cli`, the authenticated command line interface for marketing operations.
+- Bounty agent skills, which teach AI coding agents how to use the CLI safely and consistently.
 
 ## Next Steps
 
-- [Quickstart](/quickstart)
-- [Install the CLI](/cli/installation)
-- [Install agent skills](/skills/installing)
-- [Review the command reference](/cli/commands)
+- [Bounty app quickstart](/quickstart)
+- [CLI overview](/cli/overview)
+- [CLI quickstart](/cli/quickstart)
+- [Agent skills](/skills/overview)

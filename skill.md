@@ -1,8 +1,9 @@
 ---
 name: bounty
 description: |
-  Bounty gives AI agents a safe, authenticated marketing operations CLI for
-  campaign performance, ads, creatives, generated actions, and agent workflows.
+  Bounty CLI gives AI agents a safe, authenticated marketing operations CLI for
+  campaign performance, ads, creatives, generated actions, and agent workflows
+  in the Bounty app.
 license: Proprietary
 compatibility: Requires Node.js 20 or later for the CLI. Works with AI coding agents that can load skill files.
 metadata:
@@ -10,9 +11,9 @@ metadata:
   package: bounty-cli
 ---
 
-# Bounty
+# Bounty CLI
 
-Bounty helps marketing teams and AI agents inspect paid performance, creative fatigue, campaign details, generated actions, and agent workflows from the terminal.
+`bounty-cli` helps marketing teams and AI agents inspect Bounty paid performance, creative fatigue, campaign details, generated actions, and agent workflows from the terminal.
 
 ## Install
 
