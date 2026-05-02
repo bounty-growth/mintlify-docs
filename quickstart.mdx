@@ -1,55 +1,42 @@
 ---
-title: "Quickstart"
-description: "Install Bounty CLI skills, authenticate, and verify access."
+title: "Bounty App Quickstart"
+description: "Get started with the Bounty web app."
 ---
 
-# Quickstart
+# Bounty App Quickstart
 
-Use this path when you want an AI coding agent to work with Bounty marketing data through the CLI.
+Use this path when you are setting up or orienting around the main Bounty app.
 
 ## Prerequisites
 
-- Node.js 20 or later.
-- A Bounty account with access to the organization you want to inspect.
-- An AI coding agent that can load skills, such as Codex, Claude Code, Cursor, Windsurf, OpenCode, or Gemini CLI.
+- A Bounty account.
+- Access to the organization you want to work in.
+- Connected marketing or business data sources.
 
-## 1. Run Setup
+## 1. Open Bounty
 
-```bash
-npx -y bounty-cli@latest init --all --browser
-```
+Sign in to the Bounty app at `app.bountygrowth.com`.
 
-This command:
+## 2. Confirm Your Workspace
 
-- Installs Bounty marketing skills into detected AI coding agents.
-- Opens browser login for CLI authentication.
-- Stores a local user session for future CLI commands.
+Check that you are in the right organization before reviewing performance, running agents, or creating actions.
 
-## 2. Restart Your Agent
+## 3. Review Connected Data
 
-Restart your AI coding agent after setup completes. Most agents discover new skills only during startup.
+Use Connections and Settings to confirm that the data sources and organization context are ready for analysis.
 
-## 3. Verify Access
+## 4. Inspect Performance
 
-```bash
-bounty-cli whoami
-bounty-cli campaigns list --json
-```
+Start with the analytics home, then drill into Metrics, Driver Tree, Campaigns, Ads, or Chat depending on the question.
 
-If the CLI says you are not logged in, run:
+Useful first questions:
 
-```bash
-bounty-cli login
-```
+- Which metrics moved this week?
+- Which campaigns are driving spend, conversions, or CAC changes?
+- Are any ads or creatives showing fatigue?
+- Which actions are ready to plan, run, or analyze?
+- Which agents are configured for this workspace?
 
-## 4. Ask A Marketing Question
+## CLI And Agent Workflows
 
-Examples:
-
-- "Which campaigns spent the most last week?"
-- "Find weak ads from the last 30 days."
-- "Check whether this creative is fatiguing."
-- "Show me generated actions that are accepted but not live."
-- "Analyze this campaign and return prioritized findings."
-
-The installed skills steer the agent toward the right `bounty-cli` commands and JSON output.
+For terminal access or AI coding agent workflows, use the [CLI quickstart](/cli/quickstart).
