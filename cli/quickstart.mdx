@@ -1,17 +1,17 @@
 ---
 title: "CLI Quickstart"
-description: "Install Bounty CLI skills, authenticate, and verify access."
+description: "Install Bounty CLI skills for Claude Code, Codex, and other AI coding agents."
 ---
 
 # CLI Quickstart
 
-Use this path when you want an AI coding agent to work with Bounty marketing data through the CLI.
+Use this path when you want Claude Code, Codex, or another AI coding agent to work with Bounty marketing data through the CLI.
 
 ## Prerequisites
 
 - Node.js 20 or later.
 - A Bounty account with access to the organization you want to inspect.
-- An AI coding agent that can load skills, such as Codex, Claude Code, Cursor, Windsurf, OpenCode, or Gemini CLI.
+- Claude Code, Codex, or another AI coding agent that can load skills.
 
 ## 1. Run Setup
 
@@ -21,13 +21,15 @@ npx -y bounty-cli@latest init --all --browser
 
 This command:
 
-- Installs Bounty marketing skills into detected AI coding agents.
+- Installs Bounty marketing skills into detected AI coding agents, including Claude Code and Codex.
 - Opens browser login for CLI authentication.
 - Stores a local user session for future CLI commands.
 
 ## 2. Restart Your Agent
 
 Restart your AI coding agent after setup completes. Most agents discover new skills only during startup.
+
+For agent-specific setup, see [Use with Claude & Codex](/cli/claude-codex).
 
 ## 3. Verify Access
 

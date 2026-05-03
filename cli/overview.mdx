@@ -5,9 +5,9 @@ description: "Use Bounty's authenticated marketing operations CLI and AI agent s
 
 # CLI Overview
 
-`bounty-cli` gives operators and AI coding agents a terminal-safe way to inspect Bounty data without direct database, warehouse, or infrastructure access.
+[`bounty-cli`](https://github.com/bounty-growth/cli) gives operators and AI coding agents a terminal-safe way to inspect Bounty data without direct database, warehouse, or infrastructure access.
 
-The CLI is one public surface of Bounty. It connects to the Bounty app using the logged-in user's permissions, then exposes focused commands for marketing workflows.
+The CLI is one public surface of Bounty. It is open source and is especially intended for Claude Code, Codex, and other AI coding agents that need a narrow, authenticated interface for marketing workflows.
 
 ## What The CLI Covers
 
@@ -19,7 +19,7 @@ The CLI is one public surface of Bounty. It connects to the Bounty app using the
 
 ## Agent Skills
 
-Bounty agent skills are workflow instructions for AI coding agents. They help agents pick the right `bounty-cli` command, use explicit date ranges, prefer JSON output, and avoid asking for private infrastructure credentials.
+Bounty agent skills are workflow instructions for AI coding agents. They help Claude Code, Codex, and other agents pick the right `bounty-cli` command, use explicit date ranges, prefer JSON output, and avoid asking for private infrastructure credentials.
 
 Install the CLI skills and authenticate in one step:
 
@@ -40,5 +40,6 @@ Then restart your AI coding agent so it can discover the installed skills.
 
 - [CLI quickstart](/cli/quickstart)
 - [Install the CLI](/cli/installation)
+- [Use with Claude & Codex](/cli/claude-codex)
 - [Install agent skills](/skills/installing)
 - [Review the command reference](/cli/commands)
