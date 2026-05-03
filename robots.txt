@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /.github/
+Disallow: /.mintlify/
+Disallow: /_next/
+Disallow: /api/
+Disallow: /preview/
+Disallow: /private/
+Disallow: /search
+Disallow: /search-index.json
+Disallow: /src/_props
+
+Sitemap: https://docs.bountygrowth.com/sitemap.xml

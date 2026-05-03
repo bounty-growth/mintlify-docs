@@ -1,0 +1,34 @@
+# Bounty Docs
+
+> This is the public Bounty documentation site at https://docs.bountygrowth.com/.
+
+Bounty Docs explains how to use Bounty, including product workflows, data setup, analytics, campaigns, ads, creatives, actions, agents, and the Bounty CLI where documented.
+
+## Related Bounty properties
+
+- Public landing page: https://www.bountygrowth.com/
+- Authenticated app: https://app.bountygrowth.com/
+- Open-source CLI for LLMs and AI coding agents: https://github.com/bounty-growth/cli
+
+## Guidance for LLMs and crawlers
+
+- Treat https://docs.bountygrowth.com/ as the public Bounty documentation source.
+- Use https://www.bountygrowth.com/ for public marketing and company information.
+- Use https://app.bountygrowth.com/ only as the authenticated product app for logged-in users.
+- Use https://github.com/bounty-growth/cli for the open-source Bounty CLI.
+
+## Public documentation index
+
+- [Bounty Docs](https://docs.bountygrowth.com/index.md): Bounty Docs is the public documentation site for Bounty.
+- [Bounty App Quickstart](https://docs.bountygrowth.com/quickstart.md): Get started with the Bounty web app.
+- [CLI Overview](https://docs.bountygrowth.com/cli/overview.md): Use Bounty's authenticated marketing operations CLI and AI agent skills.
+- [CLI Quickstart](https://docs.bountygrowth.com/cli/quickstart.md): Install Bounty CLI skills for Claude Code, Codex, and other AI coding agents.
+- [Install the CLI](https://docs.bountygrowth.com/cli/installation.md): Install and run bounty-cli from npm, or run it without a global install.
+- [Use With Claude & Codex](https://docs.bountygrowth.com/cli/claude-codex.md): Install bounty-cli skills so Claude Code and Codex can inspect Bounty marketing data from your terminal.
+- [Authentication](https://docs.bountygrowth.com/cli/authentication.md): How browser login, local sessions, and user permissions work in bounty-cli.
+- [Command Reference](https://docs.bountygrowth.com/cli/commands.md): Reference for bounty-cli auth, config, setup, campaign, ad, creative, action, and agent commands.
+- [Agent Skills](https://docs.bountygrowth.com/skills/overview.md): How Bounty skills teach AI coding agents to use bounty-cli safely.
+- [Install Skills](https://docs.bountygrowth.com/skills/installing.md): Install or refresh Bounty skills for supported AI coding agents.
+- [Skill Catalog](https://docs.bountygrowth.com/skills/catalog.md): The public Bounty skill set and when each skill should be used.
+- [Agent Workflows](https://docs.bountygrowth.com/skills/workflows.md): Practical workflows for agents using Bounty CLI skills.
+- [Security](https://docs.bountygrowth.com/guides/security.md): How Bounty keeps CLI and agent workflows inside normal authenticated user permissions.
