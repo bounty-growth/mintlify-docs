@@ -1,0 +1,65 @@
+---
+title: "Use With Claude & Codex"
+description: "Install bounty-cli skills so Claude Code and Codex can inspect Bounty marketing data from your terminal."
+---
+
+# Use With Claude & Codex
+
+`bounty-cli` is open source, but it is primarily designed to be used by AI coding agents like Claude Code and Codex. The CLI gives agents a narrow, authenticated way to inspect Bounty marketing data without handing them infrastructure credentials.
+
+Install the agent skills, authenticate once, restart your agent, then ask marketing questions in plain English.
+
+## Install For Both Agents
+
+```bash
+npx -y bounty-cli@latest init --all --browser
+```
+
+This command:
+
+- Installs Bounty skills into detected supported agents.
+- Opens browser login for your Bounty account.
+- Stores a local user session for future CLI commands.
+
+Restart Claude Code or Codex after setup completes so it can discover the installed skills.
+
+## Install For One Agent
+
+Use Codex only:
+
+```bash
+npx -y bounty-cli@latest init --agent codex --browser
+```
+
+Use Claude Code only:
+
+```bash
+npx -y bounty-cli@latest init --agent claude-code --browser
+```
+
+## Verify Inside Your Agent
+
+Ask Claude Code or Codex to run:
+
+```bash
+bounty-cli whoami
+bounty-cli campaigns list --json
+```
+
+If the CLI says you are not logged in, run:
+
+```bash
+bounty-cli login
+```
+
+## Ask Useful Questions
+
+Once the skills are installed, ask the agent to use `bounty-cli` directly:
+
+- "Use bounty-cli to list campaigns for YYYY-MM-DD through YYYY-MM-DD and summarize what needs attention."
+- "Find weak ads from the last 30 days. Use JSON output and cite the commands you ran."
+- "Check whether this creative is fatiguing and show the evidence."
+- "Analyze this campaign and return prioritized findings."
+- "Show generated actions that are accepted but not live."
+
+The installed skills teach Claude Code and Codex which commands to run, when to use `--json`, and how to keep work inside your logged-in Bounty permissions.
