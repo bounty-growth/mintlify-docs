@@ -3,9 +3,9 @@ title: "Data Hierarchy"
 description: "Learn how Bounty organizes connectors, connections, tables, data sources, and fields."
 ---
 
-Bounty uses a hierarchy to manage the systems an organization can use, the connections it has configured, and the curated data objects people work with inside the product.
+Bounty uses a hierarchy to organize the systems a workspace can connect to, the connections that have been set up, and the curated data objects people work with inside the product.
 
-Understanding this hierarchy helps explain the difference between a system Bounty supports, a connection an organization has set up, and a data source that is ready to use in analysis, agents, actions, and chat.
+Understanding this hierarchy helps explain the difference between a system Bounty supports, a connection that has been configured, and a data source that is ready to use in analysis, agents, actions, and chat.
 
 ## Connector
 
@@ -19,91 +19,77 @@ Examples:
 - Snowflake
 - HubSpot
 
-The connector is the product catalog concept. It describes what kinds of systems Bounty can connect to or query. It does not mean the organization has connected that system yet.
+The connector is the option you choose when setting up a data system in Bounty. It describes what kinds of systems Bounty can work with. It does not mean the workspace has connected that system yet.
 
 ## Connector Access
 
-Connector access is the list of connectors an organization is allowed to use.
+Connector access is the list of connectors enabled for a workspace.
 
-This controls what appears as available in the product. A connector can be available to an organization without being connected. For example, an organization can have access to the Snowflake connector before a Snowflake connection has been configured.
+This controls which connector options appear in the product. A connector can be available without being connected. For example, a workspace can have access to the Snowflake connector before a Snowflake connection has been configured.
 
 ## Connection
 
-A connection is an organization's configured instance of a connector.
+A connection is a connector that has been set up in Bounty.
 
 Examples:
 
-- Wagetap's GA4 connection
-- Carma's Snowflake connection
-- An organization's Tinybird connection
+- A GA4 connection
+- A Meta Ads connection
+- A Snowflake connection
+- A Tinybird connection
 
-A connection can use one of two modes:
+A connection gives Bounty access to data from that system and determines which tables are available for data sources.
 
-- `sync`: Bounty pulls data from the connection into a Bounty-queryable location, usually ClickHouse.
-- `direct_query`: Bounty queries the connected system directly, such as Snowflake.
-
-A connection can produce or expose multiple tables.
-
-## Data Access Location
-
-A data access location is a place Bounty can query data.
-
-Examples:
-
-- The organization's ClickHouse database
-- The organization's Snowflake account or schema
-- Tinybird, if it is queried directly in the future
-
-This is the technical query boundary. Tables are discovered from a data access location.
+A connection can make multiple tables available. For example, a Meta Ads connection can make separate tables available for campaigns, ad sets, ads, and daily performance. Each table represents a different view of the same connected platform data.
 
 ## Table
 
-A table is a concrete queryable relation inside a data access location.
+A table is a structured collection of records available from a connection or warehouse.
+
+Tables are usually organized around a specific object, event, or report type.
 
 Examples:
 
-- `facebook_marketing_ads`
+- `campaigns`
+- `ad_sets`
+- `ads`
 - `ga4_events`
-- `daily_deal_stage_snapshot`
-- A Snowflake table
+- A deals table in a warehouse
 
-Tables are discovered live. Bounty does not currently persist a `data_tables` catalog.
+A table is usually not the final object people work with in Bounty. It is the starting point Bounty can turn into a curated data source.
 
 ## Data Source
 
-A data source is the customer-facing semantic object used inside Bounty.
-
-A data source is a curated definition over queryable data. It can be backed by:
-
-- A table reference, using `access_location_id`, `schema_name`, and `table_name`.
-- A SQL projection, using `access_location_id` and `sql`.
+A data source is the curated object people use inside Bounty.
 
 Examples:
 
 - Meta Ads
 - GA4 Events
-- Daily Deal Stage Snapshot
+- Deal Stage Snapshot
 
-This is where Bounty stores semantic curation, such as the display name, selected fields, field labels, visibility, and field types.
+A data source gives connected data a clear name, selected fields, field labels, visibility settings, and field types. Data sources are the objects used across analysis, agents, actions, and chat.
+
+A data source can come from one table or from a cleaned-up view of one or more tables.
 
 ## Data Source Field
 
-A data source field is a curated field on a data source.
+A data source field is a field on a curated data source.
 
-It maps to a physical column or projected SQL column, but stores product-level meaning:
+Fields carry the product-level meaning that makes data easier to use:
 
 - Column name
 - Display name
-- Semantic type
+- Field type
 - Visibility
 
-Fields are persisted because users can rename, hide, and curate them even if table columns are rediscovered later.
+For example, a platform field can be shown with a clearer display name, hidden when it is not useful, or typed so Bounty understands whether it is a date, metric, identifier, or dimension.
 
 ## Projection
 
-A projection is a SQL-backed data source definition.
+A projection is an advanced data source created from a saved query or transformation instead of using a table as-is.
 
-Use a projection when the raw table is not clean enough to use directly. For example, a projection can:
+Use a projection when source data needs shaping before it is useful in Bounty. For example, a projection can:
 
 - Join tables
 - Normalize values
@@ -111,63 +97,62 @@ Use a projection when the raw table is not clean enough to use directly. For exa
 - Filter unwanted rows
 - Create a cleaner semantic shape for Bounty
 
-A projection still belongs to one data access location.
+Once created, a projection behaves like other data sources in the product.
 
 ## How They Work Together
 
-These elements form a hierarchy, with each level making the next one possible:
+Connector access controls which connectors are available in the workspace. Once a connector has been configured, the data hierarchy looks like this:
 
 ```text
 Connector
   -> Connection
-  -> Data Access Location
   -> Table
   -> Data Source
   -> Data Source Fields
 ```
 
-When an organization works with data in Bounty, the lower-level pieces make the data queryable. The data source is the object people use in the product.
+When people work with data in Bounty, the data source is the main object they use. Connectors, connections, and tables explain where that data source comes from.
 
 ## Examples
 
-For synced integrations, Bounty pulls data into a Bounty-queryable location:
+For Meta Ads:
+
+```text
+Meta Ads connector
+  -> Meta Ads connection
+  -> Campaigns, ad sets, ads, and daily performance tables
+  -> Meta Ads data source
+  -> Fields such as Campaign, Spend, Impressions, and Clicks
+```
+
+For GA4:
 
 ```text
 GA4 connector
-  -> Organization GA4 sync connection
-  -> ClickHouse data access location
-  -> Discovered GA4 tables
-  -> Curated GA4 data source
+  -> GA4 connection
+  -> Events table
+  -> GA4 Events data source
+  -> Fields such as Event Name, Session Source, Users, and Conversions
 ```
 
-For direct-query warehouses, Bounty queries the connected system directly:
+For warehouse data:
 
 ```text
 Snowflake connector
-  -> Organization Snowflake direct_query connection
-  -> Snowflake data access location
-  -> Discovered Snowflake tables
-  -> Curated Snowflake data sources
+  -> Snowflake connection
+  -> Selected warehouse tables
+  -> Curated data sources
+  -> Fields with clear labels, types, and visibility settings
 ```
 
-For Tinybird today, Bounty syncs data into ClickHouse:
+For Tinybird:
 
 ```text
 Tinybird connector
-  -> Organization Tinybird sync connection
-  -> ClickHouse data access location
-  -> Synced tables
+  -> Tinybird connection
+  -> Available Tinybird tables
   -> Curated data sources
+  -> Fields selected for analysis, agents, actions, and chat
 ```
 
-If Tinybird is queried directly in the future, it would follow the direct-query pattern:
-
-```text
-Tinybird connector
-  -> Organization Tinybird direct_query connection
-  -> Tinybird data access location
-  -> Discovered or queryable pipes and tables
-  -> Curated data sources
-```
-
-The key rule: customers use data sources. Bounty uses connectors, connections, access locations, and tables to create and execute them.
+The key rule: customers use data sources. Connectors, connections, and tables explain how those data sources become available in Bounty.
