@@ -18,7 +18,7 @@
     "groups": [
       {
         "group": "Bounty App",
-        "pages": ["index", "quickstart"]
+        "pages": ["index", "quickstart", "data-hierarchy"]
       },
       {
         "group": "CLI",
