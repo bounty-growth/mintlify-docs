@@ -98,6 +98,7 @@
         "group": "Legal",
         "pages": [
           "legal",
+          "security-controls",
           "privacy",
           "terms",
           "dpa",
