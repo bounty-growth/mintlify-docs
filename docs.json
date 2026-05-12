@@ -62,6 +62,14 @@
     {
       "source": "/llm.txt",
       "destination": "/llms.txt"
+    },
+    {
+      "source": "/security",
+      "destination": "/cli/security"
+    },
+    {
+      "source": "/guides/security",
+      "destination": "/cli/security"
     }
   ],
   "navigation": {
@@ -78,6 +86,7 @@
           "cli/installation",
           "cli/claude-codex",
           "cli/authentication",
+          "cli/security",
           "cli/commands"
         ]
       },
@@ -89,10 +98,6 @@
           "skills/catalog",
           "skills/workflows"
         ]
-      },
-      {
-        "group": "Safety",
-        "pages": ["guides/security"]
       },
       {
         "group": "Legal",
