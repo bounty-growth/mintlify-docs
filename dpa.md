@@ -3,8 +3,6 @@ title: "Data Processing Addendum"
 description: "Draft Data Processing Addendum for Bounty."
 ---
 
-# Data Processing Addendum
-
 **Draft - legal review required.** This Data Processing Addendum is a working draft for Bounty and must be reviewed by legal counsel before publication or signature. It is not an executed agreement unless accepted through the process approved by Bounty and Customer. [TODO: confirm DPA execution mechanics.]
 
 Last updated: [TODO: confirm publication date]

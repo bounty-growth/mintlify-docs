@@ -3,8 +3,6 @@ title: "Security Controls"
 description: "Draft security control summary for Bounty."
 ---
 
-# Security Controls
-
 **Draft - security and legal review required.** This page is a working draft for Bounty Growth / Bounty and must be reviewed before publication or use in customer security questionnaires.
 
 Last updated: [TODO: confirm publication date]

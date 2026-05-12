@@ -3,8 +3,6 @@ title: "Privacy Policy"
 description: "Draft privacy policy for Bounty."
 ---
 
-# Privacy Policy
-
 **Draft - legal review required.** This Privacy Policy is a working draft for Bounty and must be reviewed by legal counsel before publication. It includes TODOs where product behavior, vendors, legal bases, contacts, or compliance positions need confirmation.
 
 Last updated: [TODO: confirm publication date]
