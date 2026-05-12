@@ -1,11 +1,13 @@
 ---
 title: "Legal"
-description: "Legal and compliance resources for Bounty."
+description: "Draft legal and compliance resources for Bounty."
 ---
 
 # Legal
 
 Last updated: May 12, 2026
+
+**Draft - legal review required.** These resources are working drafts for Bounty and have not yet been reviewed by legal counsel. They are provided as non-binding indications of Bounty's intended terms, practices, and policies only. They are not executed agreements and do not create binding obligations unless and until they are reviewed, approved, and accepted through an authorized agreement process.
 
 This page collects Bounty's legal, privacy, data protection, and security resources. These resources apply to Bounty's services generally and may be updated as the service, subprocessors, integrations, and legal requirements change.
 

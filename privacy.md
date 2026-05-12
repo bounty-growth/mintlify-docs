@@ -1,11 +1,13 @@
 ---
 title: "Privacy Policy"
-description: "Privacy policy for Bounty."
+description: "Draft privacy policy for Bounty."
 ---
 
 # Privacy Policy
 
 Last updated: May 12, 2026
+
+**Draft - legal review required.** This Privacy Policy is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended privacy practices only. It is not an operative privacy notice and does not create binding obligations unless and until it is reviewed, approved, and accepted through an authorized agreement process.
 
 ## Who We Are
 

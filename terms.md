@@ -1,11 +1,13 @@
 ---
 title: "Terms of Service"
-description: "Terms of Service for Bounty."
+description: "Draft Terms of Service for Bounty."
 ---
 
 # Terms of Service
 
 Last updated: May 12, 2026
+
+**Draft - legal review required.** These Terms of Service are a working draft for Bounty and have not yet been reviewed by legal counsel. They are provided as a non-binding indication of Bounty's intended service terms only. They are not an executed agreement and do not create binding obligations unless and until they are reviewed, approved, and accepted through an authorized agreement process.
 
 ## 1. Agreement To These Terms
 
