@@ -5,7 +5,7 @@ description: "Legal and compliance resources for Bounty."
 
 # Legal
 
-**Draft - legal review required.** This page is a working draft for Bounty Growth / Bounty and must be reviewed by legal counsel before publication.
+**Draft - legal review required.** This page is a working draft for Bounty and must be reviewed by legal counsel before publication.
 
 Last updated: [TODO: confirm publication date]
 

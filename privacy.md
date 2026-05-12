@@ -5,13 +5,13 @@ description: "Draft privacy policy for Bounty."
 
 # Privacy Policy
 
-**Draft - legal review required.** This Privacy Policy is a working draft for Bounty Growth / Bounty and must be reviewed by legal counsel before publication. It includes TODOs where product behavior, vendors, legal bases, contacts, or compliance positions need confirmation.
+**Draft - legal review required.** This Privacy Policy is a working draft for Bounty and must be reviewed by legal counsel before publication. It includes TODOs where product behavior, vendors, legal bases, contacts, or compliance positions need confirmation.
 
 Last updated: [TODO: confirm publication date]
 
 ## Who We Are
 
-Bounty Growth / Bounty provides a B2B SaaS analytics and growth operations product. Bounty helps teams connect marketing and business data, define metrics, inspect paid performance, analyze campaigns, manage growth actions, run agents, and ask questions through AI chat.
+Bounty provides a B2B SaaS analytics and growth operations product. Bounty helps teams connect marketing and business data, define metrics, inspect paid performance, analyze campaigns, manage growth actions, run agents, and ask questions through AI chat.
 
 For privacy questions or requests, contact us at [TODO: confirm privacy contact email]. For security questions, contact [TODO: confirm security contact email].
 

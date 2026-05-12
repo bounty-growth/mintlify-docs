@@ -5,7 +5,7 @@ description: "Draft subprocessor list for Bounty."
 
 # Subprocessors
 
-**Draft - legal review required.** This page is a working draft for Bounty Growth / Bounty and must be reviewed by legal counsel before publication. It starts with likely vendors identified for confirmation. Do not treat this as a final or complete subprocessor list until each TODO has been resolved.
+**Draft - legal review required.** This page is a working draft for Bounty and must be reviewed by legal counsel before publication. It starts with likely vendors identified for confirmation. Do not treat this as a final or complete subprocessor list until each TODO has been resolved.
 
 Last updated: [TODO: confirm publication date]
 

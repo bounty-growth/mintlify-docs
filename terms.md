@@ -5,7 +5,7 @@ description: "Draft Terms of Service for Bounty."
 
 # Terms of Service
 
-**Draft - legal review required.** These Terms of Service are a working draft for Bounty Growth / Bounty and must be reviewed by legal counsel before publication. Bracketed TODOs identify legal and product facts that must be confirmed before use.
+**Draft - legal review required.** These Terms of Service are a working draft for Bounty and must be reviewed by legal counsel before publication. Bracketed TODOs identify legal and product facts that must be confirmed before use.
 
 Last updated: [TODO: confirm publication date]
 
