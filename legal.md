@@ -5,26 +5,22 @@ description: "Legal and compliance resources for Bounty."
 
 # Legal
 
-**Draft - legal review required.** This page is a working draft for Bounty and must be reviewed by legal counsel before publication.
+Last updated: May 12, 2026
 
-Last updated: [TODO: confirm publication date]
+This page collects Bounty's legal, privacy, data protection, and security resources. These resources apply to Bounty's services generally and may be updated as the service, subprocessors, integrations, and legal requirements change.
 
-This page collects Bounty's legal, privacy, data protection, and security resources.
+If a customer has a signed agreement, order form, or data processing addendum with Bounty, that agreement controls to the extent it conflicts with these public resources.
 
 ## Legal Pages
 
-- [Terms of Service](/terms): SaaS terms for use of the Bounty app, AI features, integrations, and related services.
-- [Privacy Policy](/privacy): How Bounty collects, uses, shares, and retains personal data for website visitors, prospects, app users, and customer administrators.
-- [Security Controls](/security-controls): Draft summary of authentication, backups, encryption, patch management, MFA, and penetration testing controls.
-- [Data Processing Addendum](/dpa): Draft data processing terms for situations where Bounty processes Customer Personal Data on behalf of a customer. [TODO: confirm DPA execution process.]
-- [Subprocessors](/subprocessors): Draft list of vendors and subprocessors used or expected to be used to provide Bounty. [TODO: confirm each vendor, purpose, region, and mandatory/optional status.]
-- [Vendor Management](/vendor-management): Draft risk-based vendor inventory and third-party review process. [TODO: confirm whether this should be public, private, or customer-confidential.]
-- [CLI Security](/cli/security): Public security information currently documented for Bounty CLI and agent workflows. [TODO: confirm whether a broader app security page should be published.]
+- [Terms of Service](/terms): Terms for use of the Bounty app, CLI, agent workflows, documentation, APIs, integrations, AI features, and related services.
+- [Privacy Policy](/privacy): How Bounty collects, uses, shares, protects, and retains personal data.
+- [Data Processing Addendum](/dpa): Data processing terms for situations where Bounty processes Customer Personal Data on behalf of a customer.
+- [Subprocessors](/subprocessors): Vendors and subprocessors used to provide, host, secure, monitor, analyze, and support Bounty.
+- [Vendor Management](/vendor-management): Bounty's risk-based third-party review process.
+- [Security Controls](/security-controls): Summary of Bounty's authentication, access, data protection, backup, vulnerability management, and vendor review controls.
+- [CLI Security](/cli/security): Public security information for Bounty CLI and agent workflows.
 
 ## Contact
 
-- Legal: [TODO: confirm legal contact email]
-- Privacy: [TODO: confirm privacy contact email]
-- Security: [TODO: confirm security contact email]
-
-If you are a customer and have a signed agreement with Bounty, that agreement may control over these public drafts. [TODO: confirm precedence language with counsel.]
+For legal, privacy, or security questions, contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com).
