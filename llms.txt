@@ -31,4 +31,4 @@ Bounty Docs explains how to use Bounty, including product workflows, data setup,
 - [Install Skills](https://docs.bountygrowth.com/skills/installing.md): Install or refresh Bounty skills for supported AI coding agents.
 - [Skill Catalog](https://docs.bountygrowth.com/skills/catalog.md): The public Bounty skill set and when each skill should be used.
 - [Agent Workflows](https://docs.bountygrowth.com/skills/workflows.md): Practical workflows for agents using Bounty CLI skills.
-- [Security](https://docs.bountygrowth.com/guides/security.md): How Bounty keeps CLI and agent workflows inside normal authenticated user permissions.
+- [CLI Security](https://docs.bountygrowth.com/cli/security.md): How Bounty keeps CLI and agent workflows inside normal authenticated user permissions.

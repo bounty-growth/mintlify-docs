@@ -19,7 +19,7 @@ This page collects Bounty's legal, privacy, data protection, and security resour
 - [Data Processing Addendum](/dpa): Draft data processing terms for situations where Bounty processes Customer Personal Data on behalf of a customer. [TODO: confirm DPA execution process.]
 - [Subprocessors](/subprocessors): Draft list of vendors and subprocessors used or expected to be used to provide Bounty. [TODO: confirm each vendor, purpose, region, and mandatory/optional status.]
 - [Vendor Management](/vendor-management): Draft risk-based vendor inventory and third-party review process. [TODO: confirm whether this should be public, private, or customer-confidential.]
-- [Security](/guides/security): Public security information currently documented for Bounty CLI and agent workflows. [TODO: confirm whether a broader app security page should be published.]
+- [CLI Security](/cli/security): Public security information currently documented for Bounty CLI and agent workflows. [TODO: confirm whether a broader app security page should be published.]
 
 ## Contact
 
