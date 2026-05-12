@@ -93,6 +93,18 @@
       {
         "group": "Safety",
         "pages": ["guides/security"]
+      },
+      {
+        "group": "Legal",
+        "pages": [
+          "legal",
+          "security-controls",
+          "privacy",
+          "terms",
+          "dpa",
+          "subprocessors",
+          "vendor-management"
+        ]
       }
     ]
   }
