@@ -21,12 +21,6 @@ Examples:
 
 The connector is the option you choose when setting up a data system in Bounty. It describes what kinds of systems Bounty can work with. It does not mean the workspace has connected that system yet.
 
-## Connector Access
-
-Connector access is the list of connectors enabled for a workspace.
-
-This controls which connector options appear in the product. A connector can be available without being connected. For example, a workspace can have access to the Snowflake connector before a Snowflake connection has been configured.
-
 ## Connection
 
 A connection is a connector that has been set up in Bounty.
@@ -60,48 +54,40 @@ A table is usually not the final object people work with in Bounty. It is the st
 
 ## Data Source
 
-A data source is the curated object people use inside Bounty.
+A data source is the curated, product-facing view of queryable data that people use inside Bounty.
 
 Examples:
 
-- Meta Ads
+- Meta Ads performance
 - GA4 Events
 - Deal Stage Snapshot
 
-A data source gives connected data a clear name, selected fields, field labels, visibility settings, and field types. Data sources are the objects used across analysis, agents, actions, and chat.
+A data source is not the raw table itself. It gives Bounty a named shape for the data: where to query it, which table or prepared query shape backs it, which date and ID fields matter, and which fields should be available to users and AI workflows.
 
-A data source can come from one table or from a cleaned-up view of one or more tables.
+Most data sources are backed by one selected table from a connection or warehouse. In some cases, a data source can be backed by a prepared query shape when raw tables need to be cleaned, combined, or narrowed before they are useful in Bounty.
+
+Data sources are the objects selected across metrics, analysis, agents, actions, and chat.
 
 ## Data Source Field
 
-A data source field is a field on a curated data source.
+A data source field is one curated field exposed by a data source.
 
-Fields carry the product-level meaning that makes data easier to use:
+Each data source field maps to an underlying database column, but it is not just the raw column name. It carries the product-level meaning Bounty should use when showing, filtering, grouping, or explaining that data.
 
-- Column name
-- Display name
-- Field type
-- Visibility
+Fields can define:
 
-For example, a platform field can be shown with a clearer display name, hidden when it is not useful, or typed so Bounty understands whether it is a date, metric, identifier, or dimension.
+- The underlying database column
+- The user-facing display name
+- An optional description
+- Value mappings, such as raw IDs or codes mapped to readable labels
+- Value groups, such as several raw statuses grouped under one business label
+- Whether the field is visible and usable in Bounty
 
-## Projection
-
-A projection is an advanced data source created from a saved query or transformation instead of using a table as-is.
-
-Use a projection when source data needs shaping before it is useful in Bounty. For example, a projection can:
-
-- Join tables
-- Normalize values
-- Rename or cast columns
-- Filter unwanted rows
-- Create a cleaner semantic shape for Bounty
-
-Once created, a projection behaves like other data sources in the product.
+Hidden or unselected columns stay in the underlying table, but they do not appear as usable data source fields in Bounty.
 
 ## How They Work Together
 
-Connector access controls which connectors are available in the workspace. Once a connector has been configured, the data hierarchy looks like this:
+Once a connector has been configured, the data hierarchy looks like this:
 
 ```text
 Connector
@@ -142,7 +128,7 @@ Snowflake connector
   -> Snowflake connection
   -> Selected warehouse tables
   -> Curated data sources
-  -> Fields with clear labels, types, and visibility settings
+  -> Curated data source fields
 ```
 
 For Tinybird:
@@ -152,7 +138,7 @@ Tinybird connector
   -> Tinybird connection
   -> Available Tinybird tables
   -> Curated data sources
-  -> Fields selected for analysis, agents, actions, and chat
+  -> Curated data source fields
 ```
 
 The key rule: customers use data sources. Connectors, connections, and tables explain how those data sources become available in Bounty.
