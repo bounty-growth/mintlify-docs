@@ -2,13 +2,14 @@
 
 > This is the public Bounty documentation site at https://docs.bountygrowth.com/.
 
-Bounty Docs explains how to use Bounty, including product workflows, data setup, analytics, campaigns, ads, creatives, actions, agents, and the Bounty CLI where documented.
+Bounty Docs explains how to use Bounty, including product workflows, data setup, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the app-hosted MCP server where documented.
 
 ## Related Bounty properties
 
 - Public landing page: https://www.bountygrowth.com/
 - Authenticated app: https://app.bountygrowth.com/
 - Open-source CLI for LLMs and AI coding agents: https://github.com/bounty-growth/cli
+- App-hosted MCP server: https://app.bountygrowth.com/api/mcp
 
 ## Guidance for LLMs and crawlers
 
