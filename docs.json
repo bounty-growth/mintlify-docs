@@ -85,6 +85,7 @@
           "cli/quickstart",
           "cli/installation",
           "cli/claude-codex",
+          "cli/mcp",
           "cli/authentication",
           "cli/security",
           "cli/commands"

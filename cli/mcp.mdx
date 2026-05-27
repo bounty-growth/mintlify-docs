@@ -1,0 +1,194 @@
+---
+title: "MCP Server"
+description: "Connect Claude, ChatGPT, and other MCP clients to Bounty's read-only marketing tools."
+---
+
+Bounty exposes a read-only Model Context Protocol server for marketing analysis. It gives MCP clients a curated way to inspect campaign, ad, creative, metric, and action data using the authenticated user's normal Bounty permissions.
+
+The production MCP server URL is:
+
+```text
+https://app.bountygrowth.com/api/mcp
+```
+
+The server uses Streamable HTTP. It is a remote MCP server, not a local `stdio` server.
+
+## What The MCP Server Can Access
+
+The MCP server can read organization-scoped Bounty data that the authenticated user can already access:
+
+- Account context and data freshness.
+- Saved marketing metric definitions, trends, and breakdowns.
+- Campaign rankings and campaign performance.
+- Campaign analysis findings.
+- Facebook ad rankings, campaign ads, and creative analytics.
+- Google Ads keyword and bidding diagnostics.
+- Existing Bounty actions.
+
+It does not expose raw warehouse SQL, arbitrary table dumps, arbitrary Python execution, infrastructure credentials, or write actions.
+
+## Set Up In Claude Code
+
+Claude Code can connect to Bounty as a remote HTTP MCP server:
+
+```bash
+claude mcp add --transport http bounty https://app.bountygrowth.com/api/mcp
+```
+
+Then, inside Claude Code, run:
+
+```text
+/mcp
+```
+
+Choose the `bounty` server and follow the browser login flow. Bounty will ask you to sign in if needed, then approve MCP access for the local Claude Code client.
+
+For client-specific command details, see Claude Code's [MCP documentation](https://code.claude.com/docs/en/mcp).
+
+After authentication, ask Claude Code questions such as:
+
+- "Use Bounty MCP to rank Google Ads campaigns by CAC for the last 30 days."
+- "Find saved metrics related to CAC, then show the daily trend for the best matching metric."
+- "Analyze campaign `facebook:1234567890` for the last 7 days and summarize the evidence."
+
+## Set Up In Claude
+
+Claude's hosted custom connectors use remote MCP servers from Anthropic's cloud infrastructure. Add Bounty as a custom web connector using:
+
+```text
+https://app.bountygrowth.com/api/mcp
+```
+
+For individual plans, add it from Claude's connector settings. For Team or Enterprise plans, an owner typically adds the custom connector for the organization first, then each user connects it from their own connector settings.
+
+Hosted Claude connectors use a hosted OAuth callback URL. If the Bounty authorization page reports an invalid callback URL, use Claude Code for now or ask Bounty to enable hosted connector callback support for your workspace.
+
+For client-specific UI details, see Claude's [remote MCP custom connector guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
+
+## Set Up In ChatGPT
+
+ChatGPT can use remote MCP servers through custom apps in developer mode. Create a custom app from ChatGPT's Apps settings and use the Bounty MCP server URL:
+
+```text
+https://app.bountygrowth.com/api/mcp
+```
+
+Use OAuth authentication. Bounty's MCP OAuth flow is a public-client authorization code flow with PKCE and does not require a shared client secret.
+
+Hosted ChatGPT apps use a hosted OAuth callback URL. If the Bounty authorization page reports an invalid callback URL, Bounty needs hosted connector callback support enabled before ChatGPT can complete the OAuth flow.
+
+For client-specific UI details, see OpenAI's [ChatGPT developer mode guide](https://developers.openai.com/api/docs/guides/developer-mode).
+
+## How Authentication Works
+
+The MCP endpoint requires a bearer token:
+
+```http
+Authorization: Bearer <mcp_access_token>
+```
+
+When a client connects without a valid token, Bounty returns `401 Unauthorized` with a `WWW-Authenticate` header pointing to its protected resource metadata.
+
+Bounty exposes OAuth discovery metadata at:
+
+```text
+https://app.bountygrowth.com/.well-known/oauth-protected-resource
+https://app.bountygrowth.com/.well-known/oauth-authorization-server
+```
+
+The OAuth endpoints are:
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /cli/authorize` | Browser authorization page. |
+| `POST /api/cli/authorize` | Creates a one-time MCP authorization code after the user approves access. |
+| `POST /api/mcp/oauth/token` | Exchanges an MCP authorization code and PKCE verifier for an MCP bearer token. |
+| `GET`, `POST`, `DELETE /api/mcp` | Streamable HTTP MCP endpoint. |
+
+The token flow uses the `authorization_code` grant, PKCE `S256`, and the `mcp:read` scope. The resulting MCP bearer token is audience-bound to `api/mcp` and wraps the user's Bounty session. It expires with the underlying session; when it expires, reconnect the MCP client to authorize again.
+
+Bounty never asks the MCP client for an organization id, schema name, warehouse name, connection string, or platform credential. Organization and data scope are always derived from the authenticated Bounty user.
+
+## Date Ranges
+
+Most data tools accept either explicit dates:
+
+```json
+{
+  "startDate": "2026-05-01",
+  "endDate": "2026-05-27"
+}
+```
+
+or a preset:
+
+```json
+{
+  "datePreset": "last_30_days"
+}
+```
+
+Supported presets are:
+
+- `today`
+- `yesterday`
+- `last_7_days`
+- `last_30_days`
+- `month_to_date`
+
+Explicit dates win over presets. Tool responses include the requested range and the effective range used by Bounty.
+
+## Tool Reference
+
+All tools are read-only and return both text and structured JSON. Data-bearing tools include freshness, warnings, and a confidence basis.
+
+| Tool | Use It For | Key Inputs |
+| --- | --- | --- |
+| `get_account_context` | Understand the authenticated organization, timezone, available paid platforms, primary conversion metadata, catalog counts, and freshness. | None |
+| `search_marketing_catalog` | Search saved metrics, curated data sources, dimensions, and available campaign platforms. | `query`, `limit` |
+| `get_metric_definition` | Inspect a saved metric before making semantic claims. | `metricId` |
+| `get_metric_trend` | Fetch daily, weekly, or monthly values for one or more saved metrics. | `metricId` or `metricIds`, `granularity`, `includeComponents`, date range |
+| `get_metric_breakdown` | Break one saved metric down by an approved catalog dimension. | `metricId`, `breakdownColumn`, `limit`, date range |
+| `rank_campaigns` | Rank paid campaigns by spend, primary conversions, or CAC/CPA. | `platform`, `sortBy`, `sortDirection`, `limit`, date range |
+| `get_campaign_performance` | Fetch daily campaign performance, conversion-event breakdowns, correlated metrics, and fallback flags. | `campaignId`, optional `platform`, date range |
+| `analyze_campaign` | Return executive-ready findings for one campaign with supporting evidence. | `campaignId`, optional `platform`, date range |
+| `rank_ads` | Rank Facebook ads across campaigns by spend, impressions, clicks, CTR, CPC, frequency, fatigue, status, and trend. | `status`, `sortBy`, `sortDirection`, `limit`, date range |
+| `get_campaign_ads` | Fetch ad-level evidence for one Facebook campaign. | `campaignId`, date range |
+| `get_creative_analytics` | Fetch Facebook creative hook, hold, frequency, fatigue, aggregate, and daily performance data. | `adId`, `limit`, date range |
+| `get_google_keyword_diagnostics` | Inspect Google Ads keyword performance and bidding strategy diagnostics. | `campaignId`, date range |
+| `search_actions` | Search existing Bounty actions without mutating them. | `query`, `status`, `includeStale`, `limit` |
+
+## Example Workflows
+
+Start broad, then drill down:
+
+```text
+Use Bounty MCP to get account context, then rank Facebook campaigns by CAC for the last 30 days. If a campaign has weak efficiency, analyze the top issue and cite the freshness warnings.
+```
+
+Inspect metric semantics before reporting:
+
+```text
+Search the marketing catalog for "CAC". Pick the most relevant saved metric, show its definition, then fetch its daily trend for month to date.
+```
+
+Investigate a campaign:
+
+```text
+Analyze campaign `google_ads:1234567890` for the last 7 days. Include keyword diagnostics if available and say whether the conclusion is directional or high confidence.
+```
+
+Review existing actions:
+
+```text
+Search Bounty actions for "creative fatigue". Show live and in-progress actions first, and include stale actions only if there are no current matches.
+```
+
+## Evidence And Confidence
+
+Bounty MCP responses are designed for evidence-based analysis:
+
+- Use `rank_campaigns` for campaign CAC rankings instead of ad hoc joins.
+- Treat stale freshness, missing freshness, or source-alignment warnings as directional.
+- Prefer configured primary conversion and paid-efficiency semantics over raw platform conversion counts.
+- Cite the tool outputs, date range, and warnings when making budget or performance recommendations.
