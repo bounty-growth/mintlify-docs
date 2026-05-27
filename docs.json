@@ -71,6 +71,10 @@
     {
       "source": "/guides/security",
       "destination": "/cli/security"
+    },
+    {
+      "source": "/cli/mcp",
+      "destination": "/mcp/overview"
     }
   ],
   "navigation": {
@@ -86,11 +90,14 @@
           "cli/quickstart",
           "cli/installation",
           "cli/claude-codex",
-          "cli/mcp",
           "cli/authentication",
           "cli/security",
           "cli/commands"
         ]
+      },
+      {
+        "group": "MCP",
+        "pages": ["mcp/overview"]
       },
       {
         "group": "Agent Skills",
