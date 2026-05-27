@@ -66,3 +66,5 @@ bounty-cli config set api-url https://app.bountygrowth.com
 ## Permission Model
 
 CLI requests run with the logged-in user's Bounty permissions. If you cannot access an organization or object in Bounty, the CLI should not expose it either.
+
+For MCP clients, see [MCP Server](/cli/mcp). The MCP server uses a separate `mcp:read` bearer token that wraps the same kind of authenticated Bounty user session.

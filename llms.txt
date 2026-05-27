@@ -25,6 +25,7 @@ Bounty Docs explains how to use Bounty, including product workflows, data setup,
 - [CLI Quickstart](https://docs.bountygrowth.com/cli/quickstart.md): Install Bounty CLI skills for Claude Code, Codex, and other AI coding agents.
 - [Install the CLI](https://docs.bountygrowth.com/cli/installation.md): Install and run bounty-cli from npm, or run it without a global install.
 - [Use With Claude & Codex](https://docs.bountygrowth.com/cli/claude-codex.md): Install bounty-cli skills so Claude Code and Codex can inspect Bounty marketing data from your terminal.
+- [MCP Server](https://docs.bountygrowth.com/cli/mcp.md): Connect Claude, ChatGPT, and other MCP clients to Bounty's read-only marketing tools.
 - [Authentication](https://docs.bountygrowth.com/cli/authentication.md): How browser login, local sessions, and user permissions work in bounty-cli.
 - [Command Reference](https://docs.bountygrowth.com/cli/commands.md): Reference for bounty-cli auth, config, setup, campaign, ad, creative, action, and agent commands.
 - [Agent Skills](https://docs.bountygrowth.com/skills/overview.md): How Bounty skills teach AI coding agents to use bounty-cli safely.

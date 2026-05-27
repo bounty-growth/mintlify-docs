@@ -5,6 +5,8 @@ description: "How Bounty keeps CLI and agent workflows inside normal authenticat
 
 Bounty's CLI and skills are designed for safe agent workflows. The agent receives workflow instructions and authenticated access through the user's session, not privileged infrastructure credentials.
 
+The [MCP server](/cli/mcp) follows the same permission model for Claude, ChatGPT, and other MCP clients, but exposes only read-only MCP tools.
+
 ## What The CLI Can Access
 
 The CLI can request Bounty product data using the logged-in user's permissions:
