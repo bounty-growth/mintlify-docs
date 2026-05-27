@@ -14,11 +14,11 @@
       "canonical": "https://docs.bountygrowth.com",
       "og:site_name": "Bounty Docs",
       "og:title": "Bounty Docs",
-      "og:description": "Bounty Docs is the public documentation site for Bounty, including product workflows, analytics, campaigns, ads, creatives, actions, agents, and the Bounty CLI.",
+      "og:description": "Bounty Docs is the public documentation site for Bounty, including product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server.",
       "og:type": "website",
       "twitter:card": "summary",
       "twitter:title": "Bounty Docs",
-      "twitter:description": "Public documentation for Bounty product workflows, analytics, campaigns, ads, creatives, actions, agents, and the Bounty CLI."
+      "twitter:description": "Public documentation for Bounty product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server."
     }
   },
   "navbar": {

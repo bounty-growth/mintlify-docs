@@ -101,13 +101,60 @@ The OAuth endpoints are:
 | Endpoint | Purpose |
 | --- | --- |
 | `GET /cli/authorize` | Browser authorization page. |
+| `POST /api/mcp/oauth/register` | Dynamically registers a local public PKCE client. |
 | `POST /api/cli/authorize` | Creates a one-time MCP authorization code after the user approves access. |
 | `POST /api/mcp/oauth/token` | Exchanges an MCP authorization code and PKCE verifier for an MCP bearer token. |
 | `GET`, `POST`, `DELETE /api/mcp` | Streamable HTTP MCP endpoint. |
 
-The token flow uses the `authorization_code` grant, PKCE `S256`, and the `mcp:read` scope. The resulting MCP bearer token is audience-bound to `api/mcp` and wraps the user's Bounty session. It expires with the underlying session; when it expires, reconnect the MCP client to authorize again.
+The authorization server metadata advertises the dynamic registration endpoint as `registration_endpoint`. The token flow uses the `authorization_code` grant, PKCE `S256`, and the `mcp:read` scope. The resulting MCP bearer token is audience-bound to `api/mcp` and wraps the user's Bounty session. It expires with the underlying session; when it expires, reconnect the MCP client to authorize again.
 
 Bounty never asks the MCP client for an organization id, schema name, warehouse name, connection string, or platform credential. Organization and data scope are always derived from the authenticated Bounty user.
+
+## Dynamic Client Registration
+
+`POST /api/mcp/oauth/register` supports local public PKCE clients, including the MCP Inspector. Dynamic registration does not require a pre-issued Bounty client id, and Bounty does not issue a client secret.
+
+Registration accepts:
+
+- HTTP redirect URIs on `localhost` or `127.0.0.1`.
+- Grant types that include `authorization_code`.
+- Response types that include `code`.
+- Scope unset or limited to `mcp:read`.
+
+Non-local redirect URIs are rejected. This keeps dynamic registration focused on local development and local desktop MCP clients.
+
+Example registration payload:
+
+```json
+{
+  "redirect_uris": ["http://localhost:6274/oauth/callback"],
+  "token_endpoint_auth_method": "none",
+  "grant_types": ["authorization_code"],
+  "response_types": ["code"],
+  "client_name": "MCP Inspector",
+  "scope": "mcp:read"
+}
+```
+
+The response includes a `client_id`, `client_id_issued_at`, and echoed client metadata.
+
+## Set Up In MCP Inspector
+
+In MCP Inspector, use the Streamable HTTP server URL:
+
+```text
+https://app.bountygrowth.com/api/mcp
+```
+
+The Inspector should discover Bounty's protected resource metadata, register a local public PKCE client, open the Bounty login and approval flow in the browser, exchange the code for an MCP token, then call the server with that bearer token.
+
+For local development against a Next.js server bound to `0.0.0.0:3000`, use the local app URL that users can open:
+
+```text
+http://localhost:3000/api/mcp
+```
+
+Bounty's MCP metadata normalizes local development origins so discovery documents advertise `localhost:3000` instead of `0.0.0.0:3000`.
 
 ## Date Ranges
 
