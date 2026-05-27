@@ -2,6 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
   "name": "Bounty Docs",
+  "favicon": "/favicon.ico",
   "description": "Bounty Docs is the public documentation site for Bounty.",
   "colors": {
     "primary": "#1C7ED6",
