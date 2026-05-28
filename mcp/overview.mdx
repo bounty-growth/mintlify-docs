@@ -51,17 +51,17 @@ After authentication, ask Claude Code questions such as:
 - "Find saved metrics related to CAC, then show the daily trend for the best matching metric."
 - "Analyze campaign `facebook:1234567890` for the last 7 days and summarize the evidence."
 
-## Set Up In Claude
+## Set Up In Claude Cowork
 
-Claude's hosted custom connectors use remote MCP servers from Anthropic's cloud infrastructure. Add Bounty as a custom web connector using:
+Claude's hosted custom connectors, including Cowork connectors, use remote MCP servers from Anthropic's cloud infrastructure. Add Bounty as a custom web connector using:
 
 ```text
 https://app.bountygrowth.com/api/mcp
 ```
 
-For individual plans, add it from Claude's connector settings. For Team or Enterprise plans, an owner typically adds the custom connector for the organization first, then each user connects it from their own connector settings.
+For individual plans, add it from Claude's connector settings. For Team or Enterprise plans, an owner typically adds the custom connector for the organization first, then each user connects it from their own connector settings. Cowork uses the same remote connector setup.
 
-Hosted Claude connectors use a hosted OAuth callback URL. If the Bounty authorization page reports an invalid callback URL, use Claude Code for now or ask Bounty to enable hosted connector callback support for your workspace.
+Hosted Claude and Cowork connectors use Claude's hosted OAuth callback URL. Bounty supports that hosted callback as well as Claude Code's local loopback callback flow.
 
 For client-specific UI details, see Claude's [remote MCP custom connector guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
 
@@ -75,7 +75,7 @@ https://app.bountygrowth.com/api/mcp
 
 Use OAuth authentication. Bounty's MCP OAuth flow is a public-client authorization code flow with PKCE and does not require a shared client secret.
 
-Hosted ChatGPT apps use a hosted OAuth callback URL. If the Bounty authorization page reports an invalid callback URL, Bounty needs hosted connector callback support enabled before ChatGPT can complete the OAuth flow.
+Hosted ChatGPT apps use a hosted OAuth callback URL. Bounty supports ChatGPT's hosted connector callback flow with OAuth and PKCE.
 
 For client-specific UI details, see OpenAI's [ChatGPT developer mode guide](https://developers.openai.com/api/docs/guides/developer-mode).
 
@@ -101,7 +101,7 @@ The OAuth endpoints are:
 | Endpoint | Purpose |
 | --- | --- |
 | `GET /cli/authorize` | Browser authorization page. |
-| `POST /api/mcp/oauth/register` | Dynamically registers a local public PKCE client. |
+| `POST /api/mcp/oauth/register` | Dynamically registers an allowed public PKCE MCP client. |
 | `POST /api/cli/authorize` | Creates a one-time MCP authorization code after the user approves access. |
 | `POST /api/mcp/oauth/token` | Exchanges an MCP authorization code and PKCE verifier for an MCP bearer token. |
 | `GET`, `POST`, `DELETE /api/mcp` | Streamable HTTP MCP endpoint. |
@@ -112,16 +112,18 @@ Bounty never asks the MCP client for an organization id, schema name, warehouse 
 
 ## Dynamic Client Registration
 
-`POST /api/mcp/oauth/register` supports local public PKCE clients, including the MCP Inspector. Dynamic registration does not require a pre-issued Bounty client id, and Bounty does not issue a client secret.
+`POST /api/mcp/oauth/register` supports allowed public PKCE MCP clients, including MCP Inspector, Claude Code, hosted Claude and Cowork connectors, and ChatGPT custom apps. Dynamic registration does not require a pre-issued Bounty client id, and Bounty does not issue a client secret.
 
 Registration accepts:
 
-- HTTP redirect URIs on `localhost` or `127.0.0.1`.
+- HTTP redirect URIs on `localhost` or `127.0.0.1` for local clients such as MCP Inspector and Claude Code.
+- `https://chatgpt.com/connector/oauth/{callback_id}` and the legacy `https://chatgpt.com/connector_platform_oauth_redirect` callback for ChatGPT.
+- `https://claude.ai/api/mcp/auth_callback` for hosted Claude and Cowork connectors.
 - Grant types that include `authorization_code`.
 - Response types that include `code`.
 - Scope unset or limited to `mcp:read`.
 
-Non-local redirect URIs are rejected. This keeps dynamic registration focused on local development and local desktop MCP clients.
+Other HTTPS redirect URIs are rejected. Bounty also applies the same hosted callback allowlist when the browser authorization page and `/api/cli/authorize` resolve the request to the MCP audience; plain Bounty CLI authorization remains local-loopback only.
 
 Example registration payload:
 
