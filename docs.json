@@ -15,11 +15,11 @@
       "canonical": "https://docs.bountygrowth.com",
       "og:site_name": "Bounty Docs",
       "og:title": "Bounty Docs",
-      "og:description": "Bounty Docs is the public documentation site for Bounty, including product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server.",
+      "og:description": "Bounty Docs is the public documentation site for Bounty, including integrations, product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server.",
       "og:type": "website",
       "twitter:card": "summary",
       "twitter:title": "Bounty Docs",
-      "twitter:description": "Public documentation for Bounty product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server."
+      "twitter:description": "Public documentation for Bounty integrations, product workflows, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the MCP server."
     }
   },
   "navbar": {
@@ -82,6 +82,10 @@
       {
         "group": "Bounty App",
         "pages": ["index", "quickstart", "data-hierarchy"]
+      },
+      {
+        "group": "Integrations",
+        "pages": ["integrations/overview", "integrations/google-ads"]
       },
       {
         "group": "CLI",
