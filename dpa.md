@@ -3,13 +3,13 @@ title: "Data Processing Addendum"
 description: "Draft Data Processing Addendum for Bounty."
 ---
 
-# Data Processing Addendum
-
 Last updated: May 12, 2026
 
 **Draft - legal review required.** This Data Processing Addendum is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended data processing terms only. It is not an executed agreement and does not create binding obligations unless and until it is reviewed, approved, and accepted through an authorized agreement process.
 
 This Data Processing Addendum ("DPA") applies when Bounty processes Customer Personal Data on behalf of Customer in connection with Bounty's services and the DPA is accepted by the parties or incorporated into the applicable agreement.
+
+The operative public privacy notice is the [Privacy Policy](https://www.bountygrowth.com/privacy). This DPA remains a draft until incorporated into an authorized agreement.
 
 ## 1. Scope
 

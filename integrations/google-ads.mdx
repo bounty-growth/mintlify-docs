@@ -1,101 +1,90 @@
 ---
 title: "Google Ads Integration"
-description: "Learn how Bounty customers connect their own Google Ads accounts, what advertising data Bounty reads, and how Bounty protects OAuth credentials."
+description: "Connect authorized Google Ads accounts to a Bounty organization through Bounty-owned OAuth."
 "og:title": "Google Ads Integration | Bounty Docs"
-"og:description": "How external Bounty customers connect authorized Google Ads accounts for reporting, analysis, and recommended marketing actions."
+"og:description": "How Bounty authorizes Google Ads, discovers accessible advertiser accounts, stores credentials, and isolates selections by organization."
 "og:url": "https://docs.bountygrowth.com/integrations/google-ads"
 "og:type": "website"
 "twitter:card": "summary"
-"twitter:title": "Google Ads Integration | Bounty Docs"
-"twitter:description": "How Bounty connects authorized Google Ads accounts and uses advertising data."
 ---
 
-## Overview
+Bounty customers can authorize Google Ads and choose which accessible advertiser accounts belong to their Bounty organization. The native connection currently covers OAuth, credential storage, account discovery, and account selection.
 
-Bounty is a marketing operations platform used by advertisers and client teams. Customers connect their own Google Ads accounts so Bounty can analyze advertising performance, combine it with other authorized business data, and produce reporting, findings, and recommended marketing actions.
+<Note>
+  The native Google Ads connection does not yet power Bounty reporting queries. Reporting remains dependent on the data paths activated for the customer. This page distinguishes the shipped connection flow from later data use.
+</Note>
 
-The integration is an external-user tool available to Bounty customers. A customer decides whether to connect Google Ads and which accessible advertiser accounts to include in its Bounty organization.
+## What the current connection does
 
-## Supported Capabilities
+The current connection can:
 
-The current Google Ads integration can:
-
-- Connect Google Ads through Google OAuth.
-- Discover the Google Ads accounts available to the authorized Google user.
+- Start Google OAuth from the authenticated Bounty Connections page.
+- Request the Google Ads scope required to list and access advertiser accounts.
+- Exchange the authorization code on Bounty's server.
+- Store the access and refresh credential in encrypted Supabase Vault storage.
+- Discover advertiser accounts available to the authorizing Google user.
 - Let the user select one or more active advertiser accounts.
-- Read account, campaign, ad group, ad, keyword, and performance information used by Bounty reporting and analysis.
-- Use that data in Bounty's campaign analysis, reporting, and marketing-action workflows.
+- Save those selections as organization-scoped direct-query connection records.
+- Disconnect the credential and native selections from Bounty.
 
-These capabilities use Google Ads data for analysis and recommendations. Bounty does not currently create, edit, pause, or otherwise modify Google Ads campaigns through this integration.
+It does not currently create, edit, pause, or otherwise modify campaigns. The native selection is also not yet consumed by Bounty reporting or analysis queries.
 
-## Connection Workflow
+## Before you connect
 
-1. An authenticated Bounty user selects **Connect** for Google Ads.
+You need:
 
-2. Bounty redirects the user to Google OAuth.
+- An authenticated Bounty account.
+- Access to the Bounty organization receiving the connection.
+- Google access to at least one Google Ads advertiser account.
+- The Google Ads connector enabled for the Bounty organization.
 
-3. Google shows the requested Google Ads permission.
+Bounty owns the OAuth client, Google Ads developer token, and callback. Customers do not provide a developer token or OAuth client secret.
 
-4. The user authorizes access.
+## Connection workflow
 
-5. Google returns the authorization code directly to Bounty.
+1. Open **Connections** in Bounty and select **Connect Google Ads**.
+2. Review Bounty's disclosure describing the requested data, AI processing, and organization isolation.
+3. Select **Continue to Google**.
+4. Review Google's consent screen and authorize the Google Ads permission.
+5. Google returns the authorization code to Bounty's server callback.
+6. Bounty stores the resulting credential in Vault and lists advertiser accounts available to the Google user.
+7. Select the accounts to associate with the current Bounty organization.
+8. Bounty saves the selected account identifiers and shows Google Ads as connected.
 
-6. Bounty exchanges the code on the server and stores the resulting credential securely.
+Bounty never asks for the user's Google password. OAuth access and refresh credentials are not returned to the browser after authorization.
 
-7. Bounty lists the advertiser accounts accessible to the Google user.
+## Data requested and intended use
 
-8. The user selects the accounts they want connected.
+The Google Ads OAuth scope can provide access to Google Ads account and advertising data. The native flow initially uses it to discover account identifiers and metadata so the user can select the correct advertiser accounts.
 
-9. Bounty scopes subsequent access to the selected Bounty organization and Google Ads accounts.
+When Bounty activates a data workflow using the selected connection, it may process account, campaign, ad group, ad, keyword, configuration, spend, impression, click, conversion, and related performance data to provide customer-requested reporting, analysis, recommendations, and automation. The product will identify that activated behavior separately; completing OAuth alone does not imply that native reporting is active.
 
-Bounty never asks for the user's Google password. Customers do not provide or receive a Google Ads developer token. Bounty's developer token and OAuth client secret remain server-side, and OAuth access and refresh credentials are never returned to the browser. Stored credentials are scoped to the customer's Bounty organization.
+## AI use and model isolation
 
-## Data Used
+Bounty may use de-identified Google-derived data with OpenAI and Anthropic as contracted processors to produce customer-visible analysis, summaries, recommendations, chat responses, and workflow outputs. Bounty does not allow those providers to train their general models with submitted customer data.
 
-Bounty reads the Google Ads business data needed for its current reporting and analysis features:
+Where a customer enables model personalization, Google-derived data may be used only for a customer-specific model or model artifact belonging to the authorizing Bounty organization. The data retains organization provenance and is never pooled, commingled, or used to train a generalized, foundational, or cross-customer model.
 
-- Account identifiers and account metadata, used to identify and display the selected advertiser accounts.
-- Campaigns and campaign status, used to organize and filter performance reporting.
-- Ad groups, ads, and keywords, used to analyze performance at the levels where marketing teams make decisions.
-- Spend, impressions, clicks, conversions, and related performance metrics, used to calculate trends, compare results, and support findings.
-- Campaign configuration or bidding-strategy information where it is used by existing Bounty reporting or diagnostic features.
+## Security and organization isolation
 
-Bounty uses this information within the connected customer's organization for campaign analysis, reporting, and marketing-action workflows.
+- Credentials are encrypted at rest in Vault and used only by server-side Bounty services.
+- The stored secret name includes the Bounty organization ID.
+- Account selections are stored against the same organization ID.
+- A user can select only accounts returned for that user's Google authorization.
+- Selecting an account for one Bounty organization does not expose it to another organization.
+- Bounty's OAuth client secret and developer token remain server-side.
 
-## Security And Access
+## Disconnect and delete
 
-- OAuth access and refresh credentials are encrypted at rest.
-- Credentials are used only by server-side Bounty services and are not returned to the browser.
-- A connected Google user can grant access only to Google Ads accounts they are already authorized to access.
-- Selected advertiser accounts and credentials are isolated by Bounty organization.
-- Users can disconnect Google Ads in Bounty and can also revoke Bounty through their Google Account permissions.
-- Bounty does not sell credentials or expose its Google Ads developer token to customers.
+Use **Disconnect Google Ads** on the Bounty Connections page to remove the organization's native Google Ads credential and account selections. Disconnect is idempotent: repeating it does not affect another organization or another connector. You can also revoke Bounty through your Google Account permissions.
 
-For more information, see [Security Controls](/security-controls) and the [Privacy Policy](/privacy).
+Disconnecting stops future access through the native connection. To delete Google-derived data previously processed through another configured data path, contact Bounty as described in the [Privacy Policy](https://www.bountygrowth.com/privacy). Deletion removes the data from future training inputs and deletes or rebuilds an affected customer-specific model.
 
-## Intended Users
+## Privacy, security, and support
 
-The Google Ads integration is available to external Bounty customers, including advertisers, agencies, and marketing teams managing their own accounts or client accounts they are authorized to access. Using the integration requires an authenticated Bounty account and access to the relevant Bounty organization.
-
-## Product Walkthrough
-
-1. In Bounty, open **Connections**, find Google Ads, and select **Connect**.
-
-2. Review Google's consent screen and authorize the requested Google Ads access. The authorization happens on Google; Bounty does not receive the user's Google password.
-
-3. After Google redirects back to Bounty, review the active advertiser accounts available to the authorized Google user.
-
-4. Select one or more advertiser accounts to connect to the current Bounty organization.
-
-5. Use the connected data in Bounty reporting, campaign analysis, and marketing-action workflows.
-
-The account list is limited to accounts available to the authorizing Google user. Selecting an account for one Bounty organization does not make it available to another organization.
-
-## Privacy, Terms, And Support
-
-- [Privacy Policy](/privacy)
-- [Terms of Service](/terms)
-- [Legal and contact information](/legal#contact)
+- [Privacy Policy](https://www.bountygrowth.com/privacy)
 - [Security Controls](/security-controls)
+- [Subprocessors](/subprocessors)
+- [Legal and contact information](/legal#contact)
 
-For help with a Google Ads connection, use the contact information on the [Legal page](/legal#contact).
+For connection support, email [arran@bountygrowth.com](mailto:arran@bountygrowth.com).
