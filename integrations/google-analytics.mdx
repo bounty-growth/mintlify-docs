@@ -1,0 +1,70 @@
+---
+title: "Google Analytics Integration"
+description: "Connect authorized GA4 properties to a Bounty organization through Bounty-owned OAuth."
+"og:title": "Google Analytics Integration | Bounty Docs"
+"og:description": "How Bounty authorizes Google Analytics, discovers accessible GA4 properties, stores credentials, and isolates selections by organization."
+"og:url": "https://docs.bountygrowth.com/integrations/google-analytics"
+"og:type": "website"
+"twitter:card": "summary"
+---
+
+Bounty customers can authorize Google Analytics and choose which accessible GA4 properties belong to their Bounty organization. The native connection currently covers OAuth, credential storage, property discovery, and property selection.
+
+<Note>
+  The native GA4 connection does not yet power Bounty reporting queries. Reporting remains dependent on the data paths activated for the customer.
+</Note>
+
+## What the current connection does
+
+The current connection can:
+
+- Start Google OAuth from the authenticated Bounty Connections page.
+- Request read-only Google Analytics access.
+- Exchange the authorization code on Bounty's server.
+- Store the access and refresh credential in encrypted Supabase Vault storage.
+- Discover GA4 properties available to the authorizing Google user.
+- Let the user select one or more properties.
+- Save those selections as organization-scoped direct-query connection records.
+- Disconnect the credential and native selections from Bounty.
+
+The connection is read-only. It does not change Google Analytics configuration, events, audiences, or properties, and its native selections are not yet consumed by Bounty reporting queries.
+
+## Connection workflow
+
+1. Open **Connections** in Bounty and select **Connect Google Analytics**.
+2. Review Bounty's disclosure describing the requested data, AI processing, and organization isolation.
+3. Select **Continue to Google**.
+4. Review Google's consent screen and authorize read-only Google Analytics access.
+5. Google returns the authorization code to Bounty's server callback.
+6. Bounty stores the credential in Vault and lists GA4 properties available to the Google user.
+7. Select the properties to associate with the current Bounty organization.
+8. Bounty saves the selected property identifiers and shows Google Analytics as connected.
+
+Bounty never receives the user's Google password. Credentials remain server-side after authorization.
+
+## Data requested and intended use
+
+The read-only Google Analytics scope can provide access to property metadata and reporting data. The native flow initially uses it to discover property identifiers and names for selection.
+
+When Bounty activates a data workflow using the selected connection, it may process GA4 dimensions, metrics, website activity, acquisition data, and conversion reporting to provide customer-requested reporting, analysis, recommendations, and automation. Completing OAuth alone does not imply that native reporting is active.
+
+## AI use and model isolation
+
+Bounty may use de-identified Google-derived data with OpenAI and Anthropic as contracted processors to produce customer-visible Bounty features. Bounty does not allow those providers to train their general models with submitted customer data.
+
+Google-derived data may personalize a model only for the authorizing Bounty organization. It keeps organization provenance and is never pooled, commingled, or used for generalized, foundational, or cross-customer model training.
+
+## Disconnect and delete
+
+Use **Disconnect Google Analytics** on the Bounty Connections page to remove the organization's native GA4 credential and property selections. You can also revoke Bounty through your Google Account permissions.
+
+To request deletion of previously processed Google-derived data, contact Bounty under the [Privacy Policy](https://www.bountygrowth.com/privacy). Deleted data is removed from future training inputs and any affected customer-specific model is deleted or rebuilt.
+
+## Privacy, security, and support
+
+- [Privacy Policy](https://www.bountygrowth.com/privacy)
+- [Security Controls](/security-controls)
+- [Subprocessors](/subprocessors)
+- [Legal and contact information](/legal#contact)
+
+For connection support, email [arran@bountygrowth.com](mailto:arran@bountygrowth.com).

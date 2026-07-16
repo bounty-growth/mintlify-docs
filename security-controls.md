@@ -1,13 +1,9 @@
 ---
 title: "Security Controls"
-description: "Draft security control summary for Bounty."
+description: "Security control summary for Bounty."
 ---
 
-# Security Controls
-
-Last updated: May 12, 2026
-
-**Draft - legal review required.** This Security Controls page is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended security practices only. It is not a security certification, audit report, or contractual commitment unless and until it is reviewed, approved, and accepted through an authorized agreement process.
+Last updated: July 16, 2026
 
 Bounty maintains security controls designed to protect customer data, personal data, product systems, credentials, source code, and internal information. These controls are reviewed as the service, vendors, integrations, and operating environment change.
 
@@ -87,7 +83,7 @@ See:
 Legal, privacy, and data protection resources are available here:
 
 - [Legal](/legal)
-- [Privacy Policy](/privacy)
-- [Terms of Service](/terms)
+- [Privacy Policy](https://www.bountygrowth.com/privacy)
+- [Terms and Conditions](https://www.bountygrowth.com/termsandconditions)
 - [Data Processing Addendum](/dpa)
 - [Subprocessors](/subprocessors)

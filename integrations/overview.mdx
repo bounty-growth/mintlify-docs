@@ -1,20 +1,25 @@
 ---
 title: "Integrations"
-description: "Learn how Bounty connects customer-authorized marketing, analytics, CRM, and warehouse data."
+description: "How Bounty connects customer-authorized marketing, analytics, CRM, and warehouse systems."
 ---
 
-Bounty integrations connect customer-authorized platforms to the Bounty marketing operations workspace. Customers choose which systems and accounts to connect, and Bounty uses the resulting data for reporting, analysis, and marketing-action workflows.
+Bounty integrations connect systems selected and authorized by a customer. Each credential, account selection, and property selection is scoped to the customer's Bounty organization.
 
-Connecting a platform does not give Bounty access to accounts the authorizing user cannot already access. Each connection and its selected accounts are isolated to the customer's Bounty organization.
+## Native Google connections
 
-## Google Ads
+- [Google Ads](/integrations/google-ads) supports Bounty-owned OAuth, advertiser-account discovery, account selection, encrypted credential storage, and disconnect.
+- [Google Analytics](/integrations/google-analytics) supports Bounty-owned OAuth, GA4 property discovery, property selection, encrypted credential storage, and disconnect.
 
-The [Google Ads integration](/integrations/google-ads) lets advertisers, agencies, and marketing teams connect their own authorized advertiser accounts. Bounty reads account, campaign, ad group, ad, keyword, and performance information for reporting, campaign analysis, and recommended marketing actions.
+These native connections currently establish authorization and save the selected provider resources. They do not yet feed Bounty reporting queries. Reporting remains dependent on the data paths activated for the customer.
 
-The Google Ads page explains the OAuth connection process, data Bounty uses, current capabilities, and security controls.
+## Other connection types
 
-## Other Documented Connection Types
+Bounty also supports Meta Ads, Microsoft Advertising, HubSpot, Snowflake, Tinybird, Customer.io, Apple Search Ads, and Criteo connections. Availability and setup depend on the organization's configuration.
 
-Bounty also documents support for GA4, Meta Ads, HubSpot, Snowflake, and Tinybird connections. Available data and setup steps depend on the platform and the customer's configuration.
+An integration never grants access beyond the accounts and resources available to the authorizing user. See [Data Hierarchy](/data-hierarchy) for the relationship between connectors, connections, tables, data sources, and fields.
 
-See [Data Hierarchy](/data-hierarchy) to understand how connectors, connections, tables, and data sources work together in Bounty.
+## AI processing
+
+When a customer requests an AI-backed feature, Bounty may send de-identified customer data to OpenAI or Anthropic as contracted processors to return the requested result. Google-derived data may personalize a model only for the authorizing Bounty organization. It is never used for generalized, foundational, pooled, or cross-customer model training.
+
+See the operative [Privacy Policy](https://www.bountygrowth.com/privacy) and the [Subprocessors](/subprocessors) list for details.

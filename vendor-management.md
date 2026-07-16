@@ -1,13 +1,9 @@
 ---
 title: "Vendor Management"
-description: "Draft vendor and third-party risk management process for Bounty."
+description: "Vendor and third-party risk management process for Bounty."
 ---
 
-# Vendor Management
-
-Last updated: May 12, 2026
-
-**Draft - legal review required.** This Vendor Management page is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended vendor management practices only. It is not a contractual commitment unless and until it is reviewed, approved, and accepted through an authorized agreement process.
+Last updated: July 16, 2026
 
 Bounty uses a risk-based vendor management process for third-party tools, infrastructure providers, subprocessors, developer tools, customer-authorized integrations, and corporate operations vendors.
 

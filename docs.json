@@ -54,6 +54,14 @@
           {
             "label": "Open-source CLI",
             "href": "https://github.com/bounty-growth/cli"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "https://www.bountygrowth.com/privacy"
+          },
+          {
+            "label": "Terms and Conditions",
+            "href": "https://www.bountygrowth.com/termsandconditions"
           }
         ]
       }
@@ -75,6 +83,16 @@
     {
       "source": "/cli/mcp",
       "destination": "/mcp/overview"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal",
+      "permanent": true
     }
   ],
   "navigation": {
@@ -85,7 +103,11 @@
       },
       {
         "group": "Integrations",
-        "pages": ["integrations/overview", "integrations/google-ads"]
+        "pages": [
+          "integrations/overview",
+          "integrations/google-ads",
+          "integrations/google-analytics"
+        ]
       },
       {
         "group": "CLI",
@@ -117,8 +139,6 @@
         "pages": [
           "legal",
           "security-controls",
-          "privacy",
-          "terms",
           "dpa",
           "subprocessors",
           "vendor-management"
