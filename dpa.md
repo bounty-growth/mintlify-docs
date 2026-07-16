@@ -1,155 +1,104 @@
 ---
 title: "Data Processing Addendum"
-description: "Draft Data Processing Addendum for Bounty."
+description: "Data processing terms that apply when Bounty handles Customer Personal Data on a customer's behalf."
 ---
 
-Last updated: May 12, 2026
+**Bounty | Version 1.0 | 15 July 2026**
 
-**Draft - legal review required.** This Data Processing Addendum is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended data processing terms only. It is not an executed agreement and does not create binding obligations unless and until it is reviewed, approved, and accepted through an authorized agreement process.
+This Data Processing Addendum ("DPA") forms part of the agreement between Bounty and the customer identified in that agreement ("Customer") governing Customer's use of the Service (the "Agreement"). It applies when Bounty handles Customer Personal Data on Customer's behalf.
 
-This Data Processing Addendum ("DPA") applies when Bounty processes Customer Personal Data on behalf of Customer in connection with Bounty's services and the DPA is accepted by the parties or incorporated into the applicable agreement.
+## Key details
 
-The operative public privacy notice is the [Privacy Policy](https://www.bountygrowth.com/privacy). This DPA remains a draft until incorporated into an authorized agreement.
+| Item | Details |
+| --- | --- |
+| **Provider** | The Bounty entity identified in the Agreement or applicable order form or invoice. |
+| **Customer** | The customer entity identified in the Agreement or applicable order form. |
+| **Service** | Bounty's B2B SaaS analytics and growth operations service, including its app, integrations, metrics, analyses, actions, agents, chat, API, CLI and related support. |
+| **Processing locations** | Australia and the United States. Primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. |
+| **Security contact** | arran@bountygrowth.com |
+| **Subprocessors** | [View current Subprocessor list](https://docs.bountygrowth.com/subprocessors) |
+| **Security controls** | [View current security-control summary](https://docs.bountygrowth.com/security-controls) |
 
-## 1. Scope
+## 1. Definitions
 
-"Customer Personal Data" means personal data contained in Customer Data that Bounty processes on behalf of Customer under the applicable agreement.
+**1.1 Applicable Privacy Law.** means the Privacy Act 1988 (Cth), the Australian Privacy Principles and any other Australian privacy or data protection law that applies to the handling of Customer Personal Data under the Agreement.
 
-If there is a conflict between this DPA and the applicable agreement, the applicable agreement controls except where this DPA expressly provides more specific data processing terms required by applicable data protection law.
+**1.2 Customer Personal Data.** means personal information that Customer or its authorised users submit to, make available to, or generate through the Service and that Bounty handles on Customer's behalf.
 
-## 2. Roles
+**1.3 Security Incident.** means a confirmed breach of security that results in accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to Customer Personal Data. It excludes unsuccessful attempts and events that do not compromise Customer Personal Data.
 
-Customer is the Controller or Processor of Customer Personal Data, depending on Customer's relationship with the relevant data subjects and data sources.
+**1.4 Subprocessor.** means a third party Bounty engages to handle Customer Personal Data on Customer's behalf.
 
-Bounty is the Processor or Subprocessor of Customer Personal Data when it processes Customer Personal Data on behalf of Customer.
+## 2. Scope and processing
 
-Each party will comply with data protection laws that apply to its role.
+**2.1 Roles.** Customer determines why and how Customer Personal Data is handled. Bounty handles it on Customer's behalf to provide the Service. Each party will comply with Applicable Privacy Law as it applies to that party.
 
-## 3. Processing Instructions
+**2.2 Customer responsibilities.** Customer is responsible for Customer Personal Data and its instructions, including providing required notices, obtaining required consents or other authority, and ensuring that its collection and use of Customer Personal Data through the Service is lawful.
 
-Bounty will process Customer Personal Data only:
+**2.3 Purpose and duration.** Bounty may collect, access, store, organise, query, analyse, transform, display, transmit and otherwise handle Customer Personal Data as necessary to provide, secure, support, maintain and improve the Service; carry out Customer's use, configuration and written instructions; and comply with law. Handling continues for the term of the Agreement and any further period allowed by the Agreement or law.
 
-- To provide, secure, support, maintain, and improve the service.
-- As instructed by Customer through the agreement, product configuration, support requests, and authorized use of the service.
-- As required by applicable law.
+**2.4 People and information covered.** Customer Personal Data may relate to Customer's authorised users, personnel, business contacts, prospects, leads, customers, end users and other individuals represented in Customer-authorised data sources. It may include identifiers and business contact details; account, organisation and subscription information; marketing, advertising, campaign, CRM, analytics, product-usage and event data; queries, prompts, outputs, support communications and files; and credentials or tokens for Customer-authorised integrations.
 
-Bounty will notify Customer if Bounty believes an instruction violates applicable data protection law, unless prohibited by law.
+**2.5 Sensitive information.** The Service is not intended for sensitive information, health information, payment-card data, government identifiers, children's data or other highly regulated information unless Bounty has authorised it in writing. Customer must not submit that information without such authorisation.
 
-## 4. Confidentiality
+## 3. Instructions and confidentiality
 
-Bounty will ensure that personnel authorized to process Customer Personal Data are bound by confidentiality obligations or are subject to appropriate statutory confidentiality duties.
+**3.1 Instructions.** The Agreement, this DPA, Customer's configuration and use of the Service, and written support requests are Customer's instructions. Bounty may decline or suspend an instruction that it reasonably believes is unlawful, unsafe, outside the Service or inconsistent with the Agreement.
 
-## 5. Security Measures
+**3.2 Required handling.** Bounty may handle Customer Personal Data where required by law. Unless prohibited, Bounty will notify Customer of the requirement before doing so.
 
-Bounty will implement and maintain appropriate technical and organizational measures designed to protect Customer Personal Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or unauthorized access.
+**3.3 Confidentiality.** Bounty will limit access to authorised personnel who need it for their duties and who are subject to confidentiality obligations.
 
-Additional measures are listed in Annex 2 and summarized in [Security Controls](/security-controls).
+## 4. Security
+
+**4.1 Safeguards.** Bounty will maintain technical and organisational measures appropriate to the nature of the Customer Personal Data and the reasonably foreseeable risks, designed to protect it from misuse, interference, loss and unauthorised access, modification or disclosure.
+
+**4.2 Current controls.** Bounty's current security-control summary is published at https://docs.bountygrowth.com/security-controls. Bounty may update its controls as the Service and technology develop, provided the overall level of protection is not materially reduced during the term of the Agreement.
+
+**4.3 Customer controls.** Customer is responsible for its configuration of the Service, integrations, permissions, credentials, retention settings, exports, workflows and user access, and for systems and endpoints under its control.
+
+## 5. Security incidents
+
+**5.1 Notification.** Bounty will notify Customer without undue delay after becoming aware of a Security Incident and, where feasible, within 72 hours. Notice will be sent to Customer's designated account or security contact.
+
+**5.2 Response.** Bounty will take reasonable steps to contain, investigate, mitigate and remediate the Security Incident and will provide information reasonably available to Bounty that Customer needs to assess the incident and meet applicable notification obligations.
+
+**5.3 No admission.** Notification or assistance concerning a Security Incident is not an admission of fault or liability.
 
 ## 6. Subprocessors
 
-Customer authorizes Bounty to use subprocessors to provide the service, subject to this DPA. The subprocessor list is available at [Subprocessors](/subprocessors).
+**6.1 General authorisation.** Customer generally authorises Bounty to engage, add, replace or remove Subprocessors as Bounty reasonably determines appropriate to operate and develop the Service. Bounty may do so without prior notice, consent or approval from Customer.
 
-Bounty will impose written data protection obligations on subprocessors that are appropriate for the services they provide.
+**6.2 List.** Bounty's current Subprocessor list is published at https://docs.bountygrowth.com/subprocessors. Updating that page does not create a separate notice, consent, approval or objection right.
 
-Bounty remains responsible for subprocessors' processing of Customer Personal Data to the extent required by applicable data protection law and the applicable agreement.
+**6.3 Protections.** Bounty will impose written data-protection obligations appropriate to each Subprocessor's services and remains responsible for its Subprocessors to the extent required by Applicable Privacy Law and the Agreement.
 
-Customers with contractual notice or objection rights for new subprocessors receive those rights as described in their agreement with Bounty.
+## 7. Overseas processing
 
-## 7. Assistance With Data Subject Requests
+**7.1 Locations.** Customer authorises Bounty and its Subprocessors to handle Customer Personal Data in Australia and the United States. Bounty's primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. Other Subprocessor locations are shown on Bounty's Subprocessor list; Customer-selected integrations may use the locations of those services.
 
-Bounty will provide reasonable assistance to Customer for data subject requests relating to Customer Personal Data, taking into account the nature of processing and the information available to Bounty.
+**7.2 Safeguards.** Bounty will take reasonable steps required of it under Applicable Privacy Law in relation to overseas recipients. Customer remains responsible for determining whether its disclosure or use of Customer Personal Data through the Service satisfies Customer's own overseas-disclosure obligations.
 
-If Bounty receives a request directly from a data subject relating to Customer Personal Data, Bounty may direct the requester to Customer unless required by law to respond differently.
+## 8. Assistance
 
-## 8. Security Incident Notice
+**8.1 Individual requests.** Bounty will reasonably assist Customer with access or correction requests, privacy complaints and regulator enquiries concerning Customer Personal Data, taking into account the Service and information available to Bounty. Bounty may direct an individual who contacts it to Customer unless law requires otherwise.
 
-Bounty will notify Customer after becoming aware of a Security Incident affecting Customer Personal Data.
+**8.2 Compliance support.** Bounty will reasonably assist Customer with security-incident assessment and notifications, privacy impact assessments and other compliance enquiries concerning Bounty's handling of Customer Personal Data.
 
-"Security Incident" means a confirmed breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or unauthorized access to Customer Personal Data.
+**8.3 Costs.** Bounty may charge reasonable fees for unusually frequent, extensive or burdensome assistance unless Applicable Privacy Law requires it without charge. Bounty will advise Customer before incurring material fees.
 
-## 9. Deletion Or Return
+## 9. Information and review
 
-At termination or expiration of the service, Bounty will delete or return Customer Personal Data as required by the applicable agreement and product functionality, unless retention is required by law.
+**9.1 Compliance information.** On reasonable request, Bounty will provide information reasonably necessary to demonstrate compliance with this DPA, including available security documentation, independent reports or certifications, or a reasonable written questionnaire.
 
-## 10. Audit And Documentation
+**9.2 Review process.** Further review is available only where required by Applicable Privacy Law, a regulator or a material Security Incident and must begin remotely using available documents. An on-site inspection is permitted only if remote material is insufficient to meet a legal requirement. Reviews must be coordinated in advance, avoid unreasonable disruption, and protect Bounty's and other customers' confidential information.
 
-Bounty will make available information reasonably necessary to demonstrate compliance with this DPA, subject to confidentiality, security, and operational limits.
+**9.3 Reviewer and costs.** A reviewer must be independent, suitably qualified, not a competitor of Bounty and bound by confidentiality. Customer bears its review costs and Bounty's reasonable costs for an on-site or unusually burdensome review, unless it identifies Bounty's material breach of this DPA.
 
-## 11. International Transfers
+## 10. Term and general terms
 
-Bounty and its subprocessors may process Customer Personal Data outside Customer's country or region. Where required, the parties will use an appropriate transfer mechanism.
+**10.1 Post-termination handling.** Handling of Customer Personal Data after expiration or termination of the Agreement is governed by the Agreement and Applicable Privacy Law.
 
-## 12. CCPA/CPRA Service Provider Terms
+**10.2 Liability.** To the maximum extent permitted by law, each party's liability arising from this DPA is subject to the exclusions, waivers and limitations in the Agreement.
 
-Where the CCPA/CPRA applies, Bounty will process Customer Personal Data as a service provider or contractor for Customer and will not sell or share Customer Personal Data, retain, use, or disclose it for purposes other than providing the service, or combine it with personal information from other sources except as permitted by law.
-
-## 13. Liability
-
-Liability for claims arising under this DPA is governed by the liability terms in the applicable agreement, unless prohibited by applicable law.
-
-## Annex 1: Processing Details
-
-### Subject Matter
-
-Bounty's processing of Customer Personal Data to provide a B2B SaaS analytics and growth operations product, including connected data sources, metrics, performance analysis, actions, agents, chat, CLI workflows, and support.
-
-### Nature And Purpose Of Processing
-
-Bounty may collect, receive, host, store, query, transform, analyze, display, transmit, log, delete, and otherwise process Customer Personal Data to:
-
-- Authenticate users and enforce workspace permissions.
-- Connect to customer-authorized data sources.
-- Organize connectors, connections, tables, data sources, fields, and projections.
-- Support analysis, metrics, driver trees, campaign and ad views, actions, agents, and chat.
-- Provide CLI and agent workflows using logged-in user permissions.
-- Monitor, secure, troubleshoot, and improve the service.
-- Support syncs, warehouses, exports, sandbox execution, AI prompts, AI outputs, and customer support workflows where used by Customer.
-
-### Duration
-
-For the term of the applicable agreement, plus any retention period required by law, the agreement, backup practices, security needs, or deletion/export process.
-
-### Categories Of Data Subjects
-
-Customer Personal Data may relate to:
-
-- Customer administrators and authorized users.
-- Customer employees, contractors, and business contacts.
-- End users, prospects, leads, customers, website visitors, app users, and other individuals represented in customer-authorized data sources.
-- Individuals appearing in campaign, ad, analytics, CRM, warehouse, support, or event data connected by Customer.
-
-### Categories Of Personal Data
-
-Customer Personal Data may include:
-
-- Identifiers, such as names, email addresses, user IDs, account IDs, device IDs, advertising IDs, and customer IDs.
-- Business contact and account data.
-- Marketing, advertising, campaign, ad, creative, event, conversion, and attribution data.
-- Product usage, website, app, event, and analytics data.
-- CRM, lifecycle, deal, and customer interaction data.
-- Warehouse table data, schemas, fields, and query results.
-- Prompts, queries, outputs, notes, generated actions, analysis results, and support communications.
-- Credentials, tokens, files, recordings, exports, sandbox artifacts, and other Customer Data submitted to or generated through the service.
-- Technical logs, request metadata, IP addresses, browser/device data, and error data.
-
-### Sensitive Or Special Category Data
-
-The service is not intended for sensitive personal data, special category data, protected health information, payment card data, government identifiers, children's data, or other highly regulated data unless expressly authorized in writing.
-
-## Annex 2: Technical And Organizational Measures
-
-Bounty maintains technical and organizational measures appropriate to the nature of the service, including:
-
-- Authentication and permissions: CLI requests use the logged-in user's Bounty permissions.
-- Credential minimization for agent workflows: normal CLI workflows do not require agents to receive database credentials, warehouse credentials, ad platform credentials, infrastructure secrets, or local environment files.
-- Session management: Bounty CLI stores a local user session, and users can clear it with logout.
-- Backend URL safety: Bounty CLI accepts secure remote backend URLs and local development URLs, and rejects insecure non-local HTTP URLs.
-- Least-privilege guidance: agents are instructed to verify identity, use parseable evidence, state date ranges, and avoid requesting infrastructure secrets.
-- Encryption in transit: Bounty uses HTTPS/TLS and provider-managed transport protections for app, API, integration, vendor, and CLI communications where applicable.
-- Encryption at rest: Bounty relies on infrastructure-provider encryption for application databases, storage, warehouses, logs, backups, and other hosted systems where applicable.
-- Access controls: internal access is limited based on business need and protected by authentication, authorization, and MFA where supported.
-- Logging and monitoring: Bounty uses product, infrastructure, and error monitoring to troubleshoot, secure, and operate the service.
-- Vulnerability management: security fixes are triaged and remediated through Bounty's code review, CI, deployment, and engineering tracking workflows.
-- Data deletion and retention: Customer Data is retained and deleted according to the applicable agreement, product functionality, legal requirements, and operational needs.
-- Incident response: Bounty investigates security events, escalates confirmed incidents, and notifies affected customers as required by the applicable agreement and law.
-- Vendor management: Bounty maintains a risk-based vendor management process for vendors that process customer data or support critical product operations.
+**10.3 Priority and governing terms.** If this DPA conflicts with the Agreement about the handling of Customer Personal Data, this DPA controls to the extent of that conflict. Otherwise, the Agreement controls, including its governing law, dispute-resolution and notice terms.

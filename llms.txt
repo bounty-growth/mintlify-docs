@@ -8,7 +8,7 @@ Bounty Docs explains how to use Bounty, including integrations, product workflow
 
 - Public landing page: https://www.bountygrowth.com/
 - Privacy Policy: https://www.bountygrowth.com/privacy
-- Draft Terms of Service: https://www.bountygrowth.com/terms
+- Terms and Conditions: https://www.bountygrowth.com/termsandconditions
 - Authenticated app: https://app.bountygrowth.com/
 - Open-source CLI for LLMs and AI coding agents: https://github.com/bounty-growth/cli
 - App-hosted MCP server: https://app.bountygrowth.com/api/mcp
@@ -28,7 +28,7 @@ Bounty Docs explains how to use Bounty, including integrations, product workflow
 - [Google Ads Integration](https://docs.bountygrowth.com/integrations/google-ads.md): Bounty-owned OAuth, advertiser-account discovery and selection, credential protection, AI use, and disconnect behavior.
 - [Google Analytics Integration](https://docs.bountygrowth.com/integrations/google-analytics.md): Bounty-owned OAuth, GA4 property discovery and selection, credential protection, AI use, and disconnect behavior.
 - [Legal](https://docs.bountygrowth.com/legal.md): Canonical policy links and Bounty trust documentation.
-- [Data Processing Addendum](https://docs.bountygrowth.com/dpa.md): Draft data-processing terms for customer agreements.
+- [Data Processing Addendum](https://docs.bountygrowth.com/dpa.md): Data-processing terms that apply when Bounty handles Customer Personal Data on a customer's behalf.
 - [Subprocessors](https://docs.bountygrowth.com/subprocessors.md): Vendors that may process Customer Data, including AI and integration providers.
 - [Security Controls](https://docs.bountygrowth.com/security-controls.md): Bounty's public security control summary.
 - [CLI Overview](https://docs.bountygrowth.com/cli/overview.md): Use Bounty's authenticated marketing operations CLI and AI agent skills.

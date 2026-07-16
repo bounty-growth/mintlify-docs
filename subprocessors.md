@@ -1,11 +1,9 @@
 ---
 title: "Subprocessors"
-description: "Draft subprocessor list for Bounty."
+description: "Subprocessor list for Bounty."
 ---
 
-Last updated: May 12, 2026
-
-**Draft - legal review required.** This Subprocessors page is a working draft for Bounty and has not yet been reviewed by legal counsel. It is provided as a non-binding indication of Bounty's intended subprocessor disclosures only. It is not a final subprocessor list or contractual notice unless and until it is reviewed, approved, and accepted through an authorized agreement process.
+Last updated: July 16, 2026
 
 Bounty uses third-party vendors and subprocessors to provide, host, secure, monitor, analyze, and support the service. This page identifies vendors that may process Customer Personal Data or other Customer Data, depending on the customer's service configuration and authorized integrations.
 

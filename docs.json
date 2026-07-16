@@ -60,8 +60,8 @@
             "href": "https://www.bountygrowth.com/privacy"
           },
           {
-            "label": "Terms of Service (draft)",
-            "href": "https://www.bountygrowth.com/terms"
+            "label": "Terms and Conditions",
+            "href": "https://www.bountygrowth.com/termsandconditions"
           }
         ]
       }
@@ -86,12 +86,12 @@
     },
     {
       "source": "/privacy",
-      "destination": "https://www.bountygrowth.com/privacy",
+      "destination": "/legal",
       "permanent": true
     },
     {
       "source": "/terms",
-      "destination": "https://www.bountygrowth.com/terms",
+      "destination": "/legal",
       "permanent": true
     }
   ],
