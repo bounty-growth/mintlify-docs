@@ -3,7 +3,7 @@ title: "Subprocessors"
 description: "Subprocessor list for Bounty."
 ---
 
-Last updated: July 16, 2026
+Last updated: August 17, 2026
 
 Bounty uses third-party vendors and subprocessors to provide, host, secure, monitor, analyze, and support the service. This page identifies vendors that may process Customer Personal Data or other Customer Data, depending on the customer's service configuration and authorized integrations.
 
@@ -17,6 +17,7 @@ Customers can contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com) wi
 | --- | --- | --- | --- | --- | --- |
 | Supabase | Authentication, database, and storage | User authentication, application database, file/object storage | Account data, authentication identifiers, workspace data, Customer Data, files/objects, and logs | Determined by Bounty's Supabase project configuration and Supabase processing locations | Core service |
 | Vercel | Hosting and processing for the Bounty app and workflows | Web app hosting, deployments, routing, serverless/edge processing | User requests, IP/device data, app data in transit, logs, environment variables, and secrets | Determined by Bounty's deployment configuration and Vercel processing locations | Core service |
+| Trigger.dev (API Hero Ltd) | Background job orchestration and managed task execution | Scheduled and asynchronous notebook, dataset, attribution, integration sync, and workflow tasks | Task payloads and tags, organization/dataset/notebook/model/run identifiers, Customer Data accessed or transformed during execution, task outputs, logs, errors, and execution metadata | Run execution in Bounty's configured Trigger.dev region; payload, output, log, and control-plane data in Trigger.dev processing and storage locations | Core background processing |
 | Airbyte | Source and data integrations | Customer-authorized connector syncs and integration data movement | Source credentials/tokens, schema metadata, synced records, sync logs, and configuration metadata | Determined by Bounty's Airbyte configuration and Airbyte processing locations | Integration-dependent |
 | OpenAI | AI inference | Customer-visible chat, agents, analysis, summarization, and generated actions | Prompts, de-identified Customer Data included in prompts, outputs, and usage metadata | Determined by OpenAI API processing locations and Bounty's account settings | AI features; submitted customer data is not used to train OpenAI's general models |
 | Anthropic | AI inference | Customer-visible analysis, agent, and language-model workflows where enabled | Prompts, de-identified Customer Data included in prompts, outputs, and usage metadata | Determined by Anthropic API processing locations and Bounty's account settings | AI features; submitted customer data is not used to train Anthropic's general models |
