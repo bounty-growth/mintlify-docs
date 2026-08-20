@@ -1,0 +1,84 @@
+---
+title: "Google Search Console Integration"
+description: "Connect selected Search Console properties to Bounty with read-only access and organization-scoped daily Datasets."
+"og:title": "Google Search Console Integration | Bounty Docs"
+"og:description": "How Bounty requests read-only Search Console access, lets users select properties, protects credentials, creates Datasets, and deletes connection data."
+"og:url": "https://docs.bountygrowth.com/integrations/google-search-console"
+"og:type": "website"
+"twitter:card": "summary"
+---
+
+An authenticated member of a Bounty organization can choose to connect Google Search Console, review Bounty's data-access disclosure, authorize the read-only permission in Google, and select the properties that belong to that Bounty organization.
+
+## Access Bounty requests
+
+Bounty requests only this OAuth scope:
+
+```text
+https://www.googleapis.com/auth/webmasters.readonly
+```
+
+This scope lets Bounty view Search Console data for properties available to the authorizing Google account. Bounty uses it to:
+
+- List the account's Search Console properties.
+- Let the user explicitly select one or more domain properties such as `sc-domain:example.com` or URL-prefix properties such as `https://www.example.com/`.
+- Read finalized Search Analytics data for the selected properties.
+
+The connection is read-only. Bounty does not modify a property, submit a URL for indexing, change indexing settings, or request the write-capable Search Console scope.
+
+## Connection workflow
+
+1. Open **Connections** in the authenticated Bounty app and select **Connect Google Search Console**.
+2. Review Bounty's disclosure covering the requested data, AI processing, and organization isolation.
+3. Select **Continue to Google** and review Google's consent screen.
+4. Authorize the read-only Search Console permission.
+5. Google returns the authorization code to Bounty's production server callback at `https://app.bountygrowth.com/api/connections/oauth/callback/google-search-console`.
+6. Bounty stores the credential in an encrypted, organization-specific Vault secret and lists the properties available to the Google account.
+7. Select the domain or URL-prefix properties to associate with the current Bounty organization.
+
+Bounty never asks for the user's Google password. OAuth access and refresh credentials remain server-side, are never returned to the browser, and are not shared with another Bounty organization.
+
+## Data stored in Bounty Datasets
+
+For each selected property, Bounty can synchronize two daily Datasets using finalized Search Console data:
+
+- **Search performance by query and page** contains the property, date, search query, canonical page URL, search type, clicks, impressions, click-through rate, and average position.
+- **Search performance by page** contains the same fields without the query dimension and is the authoritative page-total Dataset.
+
+Bounty also derives the page path from Google's canonical page URL without the scheme, hostname, query string, or fragment. Search Console reports dates in `America/Los_Angeles`; Bounty records that source timezone with the data.
+
+<Note>
+  Search Console protects user privacy and limits the rows returned by the Search Analytics API. Privacy-protected, anonymized, or lower-volume query rows may be omitted, so the query-and-page Dataset must not be treated as complete page totals. Use the page Dataset for page totals.
+</Note>
+
+## Organization and credential isolation
+
+- The encrypted credential is stored under a Vault secret specific to the Bounty organization and the Search Console integration.
+- Property selections are stored against the same organization.
+- Bounty repeats property discovery when selections are saved and rejects a property unavailable to the current Google authorization.
+- Application queries, Dataset synchronization, and disconnect operations filter by the trusted Bounty organization ID.
+- Connecting, synchronizing, or disconnecting Search Console for one organization does not expose or change another organization's credentials, selections, or data.
+
+## AI processing and subprocessors
+
+Bounty may send de-identified Google-derived data to OpenAI or Anthropic as contracted subprocessors only when needed to return an AI-backed feature requested by the user, such as customer-visible analysis, recommendations, chat responses, or workflow outputs. Bounty does not allow those providers to train their general models with submitted customer data.
+
+Where enabled, Google-derived data may personalize a model or model artifact only for the relevant Bounty organization. Bounty does not use the data for generalized, foundational, pooled, or cross-customer model training.
+
+## Disconnect, retention, and deletion
+
+Use **Disconnect Google Search Console** on the Bounty Connections page to remove the organization's Search Console OAuth credential and property selections and stop future access through that connection. Disconnect also disables future synchronization for Search Console Datasets. It does not affect the organization's Google Ads or Google Analytics connections.
+
+Synced Search Console Dataset rows are retained by default so existing reporting remains readable. The disconnect confirmation can also delete the organization's synced Search Console Dataset rows. A user can separately revoke Bounty through their Google Account permissions.
+
+To request deletion of previously processed Google-derived data or an associated organization-specific model artifact, follow the instructions on [Bounty Support](https://www.bountygrowth.com/support). Bounty's retention process and deletion timeframe are in the [Privacy Policy](https://www.bountygrowth.com/privacy).
+
+## Privacy, security, and support
+
+- [Privacy Policy](https://www.bountygrowth.com/privacy)
+- [Support and data requests](https://www.bountygrowth.com/support)
+- [Security Controls](/security-controls)
+- [Subprocessors](/subprocessors)
+- [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy)
+
+For connection support, email [arran@bountygrowth.com](mailto:arran@bountygrowth.com).

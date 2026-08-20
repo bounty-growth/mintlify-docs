@@ -16,6 +16,9 @@
     <loc>https://docs.bountygrowth.com/integrations/google-analytics</loc>
   </url>
   <url>
+    <loc>https://docs.bountygrowth.com/integrations/google-search-console</loc>
+  </url>
+  <url>
     <loc>https://docs.bountygrowth.com/cli/overview</loc>
   </url>
   <url>
@@ -50,5 +53,20 @@
   </url>
   <url>
     <loc>https://docs.bountygrowth.com/cli/security</loc>
+  </url>
+  <url>
+    <loc>https://docs.bountygrowth.com/legal</loc>
+  </url>
+  <url>
+    <loc>https://docs.bountygrowth.com/security-controls</loc>
+  </url>
+  <url>
+    <loc>https://docs.bountygrowth.com/dpa</loc>
+  </url>
+  <url>
+    <loc>https://docs.bountygrowth.com/subprocessors</loc>
+  </url>
+  <url>
+    <loc>https://docs.bountygrowth.com/vendor-management</loc>
   </url>
 </urlset>
