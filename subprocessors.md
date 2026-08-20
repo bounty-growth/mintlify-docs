@@ -3,7 +3,7 @@ title: "Subprocessors"
 description: "Subprocessor list for Bounty."
 ---
 
-Last updated: August 17, 2026
+Last updated: August 20, 2026
 
 Bounty uses third-party vendors and subprocessors to provide, host, secure, monitor, analyze, and support the service. This page identifies vendors that may process Customer Personal Data or other Customer Data, depending on the customer's service configuration and authorized integrations.
 
