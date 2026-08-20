@@ -9,6 +9,7 @@ Bounty Growth Pty Ltd (ABN 49 697 769 761) publishes its operative Privacy Polic
 
 - [Privacy Policy](https://www.bountygrowth.com/privacy): Bounty's operative notice covering personal data, customer-authorized data, Google API data, AI processing, retention, disconnection, and deletion.
 - [Terms and Conditions](https://www.bountygrowth.com/termsandconditions): Terms governing access to and use of the Bounty Growth Site and Bounty Growth Services.
+- [Support](https://www.bountygrowth.com/support): Product support and instructions for Google data access or deletion requests.
 
 ## Product trust documentation
 

@@ -3,7 +3,7 @@ title: "Subprocessors"
 description: "Subprocessor list for Bounty."
 ---
 
-Last updated: August 17, 2026
+Last updated: August 20, 2026
 
 Bounty uses third-party vendors and subprocessors to provide, host, secure, monitor, analyze, and support the service. This page identifies vendors that may process Customer Personal Data or other Customer Data, depending on the customer's service configuration and authorized integrations.
 
@@ -39,6 +39,7 @@ These vendors may process Customer Data only when a customer configures or autho
 | Meta Ads | Customer-configured advertising source | Connect campaign, ad set, ad, and daily performance tables | Campaign/ad performance data, account identifiers, audience/reporting metadata, and conversion data | Determined by Meta processing locations and the customer's account configuration | Optional / customer-configured |
 | HubSpot | Customer-configured CRM/source integration | Connect CRM or lifecycle data for analysis and data sources | Contact/company/deal data, lifecycle fields, interaction metadata, and identifiers | Determined by HubSpot processing locations and the customer's account configuration | Optional / customer-configured |
 | Google Ads | Customer-configured advertising source | Authorize Google Ads, select advertiser accounts, and support activated customer data workflows | Account metadata and, when activated, campaign, keyword/ad, conversion, and reporting data | Determined by Google processing locations and the customer's account configuration | Optional / customer-configured |
+| Google Search Console | Customer-configured search analytics source | Authorize read-only Search Console access, select domain or URL-prefix properties, and synchronize finalized daily search performance | Property identifiers, query and canonical page dimensions, clicks, impressions, click-through rate, and average position | Determined by Google processing locations and the customer's Search Console configuration | Optional / customer-configured |
 | Customer.io | Customer-configured lifecycle/customer engagement source | Connect lifecycle, messaging, or customer event data | Contact profiles, event data, message metadata, and segments | Determined by Customer.io processing locations and the customer's account configuration | Optional / customer-configured |
 | Apple Search Ads | Customer-configured advertising source | Connect campaign and app advertising performance data | Campaign/ad group/keyword performance, attribution data, and account identifiers | Determined by Apple processing locations and the customer's account configuration | Optional / customer-configured |
 
