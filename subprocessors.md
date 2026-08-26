@@ -11,11 +11,11 @@ For Bounty's broader vendor review process, see [Vendor Management](/vendor-mana
 
 Customers can contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com) with questions about subprocessors.
 
-Processing locations identify Bounty's configured primary location where known and describe confirmed downstream processing where relevant. They do not represent an exhaustive list of each provider's global operations.
+The **Countries where data may be processed** columns declare where Customer Data may be stored, accessed remotely, or otherwise processed, including confirmed downstream processing. They do not identify a processor's registered address or country of registration, and do not represent an exhaustive list of each provider's global operations.
 
 ## Core Product Vendors
 
-| Subprocessor | Purpose | Product function | Categories of data processed | Processing locations | Use |
+| Subprocessor | Purpose | Product function | Categories of data processed | Countries where data may be processed | Use |
 | --- | --- | --- | --- | --- | --- |
 | Supabase Inc. | Authentication, database, and storage | User authentication, application database, file/object storage | Account data, authentication identifiers, workspace data, Customer Data, files/objects, and logs | United States of America (Bounty's primary project data store); Supabase subprocessors may process data in the United States of America and Singapore | Core service |
 | Vercel, Inc. | Hosting and processing for the Bounty app and workflows | Web app hosting, deployments, routing, serverless/edge processing | User requests, IP/device data, app data in transit, logs, environment variables, and secrets | United States of America (primary); other locations may apply based on Bounty's deployment configuration and Vercel subprocessors | Core service |
@@ -33,7 +33,7 @@ Processing locations identify Bounty's configured primary location where known a
 
 These vendors may process Customer Data only when a customer configures or authorizes the relevant integration.
 
-| Subprocessor / integration | Purpose | Product function | Categories of data processed | Location / region | Use |
+| Subprocessor / integration | Purpose | Product function | Categories of data processed | Countries where data may be processed | Use |
 | --- | --- | --- | --- | --- | --- |
 | Snowflake | Customer-configured warehouse integration | Connect to selected warehouse tables and make curated data sources available in Bounty | Warehouse credentials/tokens, schemas, table names, selected warehouse records, query results, and metadata | Determined by the customer's Snowflake account, warehouse region, and Bounty access path | Optional / customer-configured |
 | Tinybird | Customer-configured analytics integration | Connect to available Tinybird tables and make curated data sources available in Bounty | API tokens, schemas, table names, records, query results, and metadata | Determined by the customer's Tinybird account and Bounty access path | Optional / customer-configured |
