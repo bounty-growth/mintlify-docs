@@ -3,7 +3,7 @@ title: "Subprocessors"
 description: "Subprocessor list for Bounty."
 ---
 
-Last updated: August 20, 2026
+Last updated: August 26, 2026
 
 Bounty uses third-party vendors and subprocessors to provide, host, secure, monitor, analyze, and support the service. This page identifies vendors that may process Customer Personal Data or other Customer Data, depending on the customer's service configuration and authorized integrations.
 
@@ -13,14 +13,15 @@ Customers can contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com) wi
 
 ## Core Product Vendors
 
-| Subprocessor | Purpose | Product function | Categories of data processed | Location / region | Use |
+| Subprocessor | Purpose | Product function | Categories of data processed | Processing locations | Use |
 | --- | --- | --- | --- | --- | --- |
-| Supabase | Authentication, database, and storage | User authentication, application database, file/object storage | Account data, authentication identifiers, workspace data, Customer Data, files/objects, and logs | Determined by Bounty's Supabase project configuration and Supabase processing locations | Core service |
-| Vercel | Hosting and processing for the Bounty app and workflows | Web app hosting, deployments, routing, serverless/edge processing | User requests, IP/device data, app data in transit, logs, environment variables, and secrets | Determined by Bounty's deployment configuration and Vercel processing locations | Core service |
+| Supabase Inc. | Authentication, database, and storage | User authentication, application database, file/object storage | Account data, authentication identifiers, workspace data, Customer Data, files/objects, and logs | United States of America | Core service |
+| Vercel, Inc. | Hosting and processing for the Bounty app and workflows | Web app hosting, deployments, routing, serverless/edge processing | User requests, IP/device data, app data in transit, logs, environment variables, and secrets | United States of America | Core service |
 | Trigger.dev (API Hero Ltd) | Background job orchestration and managed task execution | Scheduled and asynchronous notebook, dataset, attribution, integration sync, and workflow tasks | Task payloads and tags, organization/dataset/notebook/model/run identifiers, Customer Data accessed or transformed during execution, task outputs, logs, errors, and execution metadata | Run execution in Bounty's configured Trigger.dev region; payload, output, log, and control-plane data in Trigger.dev processing and storage locations | Core background processing |
 | Airbyte | Source and data integrations | Customer-authorized connector syncs and integration data movement | Source credentials/tokens, schema metadata, synced records, sync logs, and configuration metadata | Determined by Bounty's Airbyte configuration and Airbyte processing locations | Integration-dependent |
-| OpenAI | AI inference | Customer-visible chat, agents, analysis, summarization, and generated actions | Prompts, de-identified Customer Data included in prompts, outputs, and usage metadata | Determined by OpenAI API processing locations and Bounty's account settings | AI features; submitted customer data is not used to train OpenAI's general models |
+| OpenAI OpCo, LLC | AI inference | Customer-visible chat, agents, analysis, summarization, and generated actions | Prompts, de-identified Customer Data included in prompts, outputs, and usage metadata | Australia, Brazil, Canada, Finland, France, Germany, India, Indonesia, Ireland, Italy, Japan, Malaysia, Mexico, Netherlands, Norway, Philippines, Poland, Singapore, South Africa, South Korea, Spain, Sweden, Switzerland, United Arab Emirates, United Kingdom, and United States of America | AI features; submitted customer data is not used to train OpenAI's general models |
 | Anthropic | AI inference | Customer-visible analysis, agent, and language-model workflows where enabled | Prompts, de-identified Customer Data included in prompts, outputs, and usage metadata | Determined by Anthropic API processing locations and Bounty's account settings | AI features; submitted customer data is not used to train Anthropic's general models |
+| API Hero Ltd / Trigger.dev | Workflow processing | Scheduled and event-driven background workflows | Workflow inputs, job payloads, execution metadata, logs, and outputs | United Kingdom and United States of America | Core service |
 | E2B | Sandboxed code execution | Isolated code execution for analysis or workflow tasks | Code, inputs, customer-provided data, generated files, logs, and execution outputs | Determined by E2B processing locations and Bounty's account settings | Analysis features |
 | ClickHouse | Analytics warehouse | Storage and querying of analytics/customer data | Customer source data, transformed analytics data, query results, schemas, metadata, and logs | Determined by Bounty's ClickHouse Cloud configuration and ClickHouse processing locations | Analytics features |
 | PostHog | Product analytics and session recording | Product usage analytics, events, funnels, and session replay where enabled | User identifiers, product events, device/session metadata, page interactions, and recordings where enabled | Determined by Bounty's PostHog project configuration and PostHog processing locations | Product analytics |
