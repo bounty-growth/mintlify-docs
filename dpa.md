@@ -14,7 +14,7 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 | **Provider** | The Bounty entity identified in the Agreement or applicable order form or invoice. |
 | **Customer** | The customer entity identified in the Agreement or applicable order form. |
 | **Service** | Bounty's B2B SaaS analytics and growth operations service, including its app, integrations, metrics, analyses, actions, agents, chat, API, CLI and related support. |
-| **Processing locations** | Australia and the United States. Primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. |
+| **Processing locations** | Australia, the United States, and the other Subprocessor locations identified on Bounty's current Subprocessor list. Primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. |
 | **Security contact** | arran@bountygrowth.com |
 | **Subprocessors** | [View current Subprocessor list](https://docs.bountygrowth.com/subprocessors) |
 | **Security controls** | [View current security-control summary](https://docs.bountygrowth.com/security-controls) |
@@ -75,7 +75,7 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 
 ## 7. Overseas processing
 
-**7.1 Locations.** Customer authorises Bounty and its Subprocessors to handle Customer Personal Data in Australia and the United States. Bounty's primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. Other Subprocessor locations are shown on Bounty's Subprocessor list; Customer-selected integrations may use the locations of those services.
+**7.1 Locations.** Customer authorises Bounty and its Subprocessors to handle Customer Personal Data in Australia, the United States, and the other Subprocessor locations identified on Bounty's current Subprocessor list. Bounty's primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. Customer-selected integrations may use the locations of those services.
 
 **7.2 Safeguards.** Bounty will take reasonable steps required of it under Applicable Privacy Law in relation to overseas recipients. Customer remains responsible for determining whether its disclosure or use of Customer Personal Data through the Service satisfies Customer's own overseas-disclosure obligations.
 
