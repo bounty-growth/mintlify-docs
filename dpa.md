@@ -41,8 +41,6 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 
 **2.5 Sensitive information.** The Service is not intended for sensitive information, health information, payment-card data, government identifiers, children's data or other highly regulated information unless Bounty has authorised it in writing. Customer must not submit that information without such authorisation.
 
-**2.6 No training.** Despite clause 2.3, Bounty must not use Customer Personal Data to train, fine-tune, or otherwise improve any AI tools or models, whether Bounty's own or a third party's, except where such training or fine-tuning is undertaken solely for the Customer's own use, and the resulting model or its outputs are not used for the benefit of Bounty, any other customer, or any third party. Bounty warrants that its contracts with Subprocessors (including any large language model providers) impose the same restrictions.
-
 ## 3. Instructions and confidentiality
 
 **3.1 Instructions.** The Agreement, this DPA, Customer's configuration and use of the Service, and written support requests are Customer's instructions. Bounty may decline or suspend an instruction that it reasonably believes is unlawful, unsafe, outside the Service or inconsistent with the Agreement.
