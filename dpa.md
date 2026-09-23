@@ -9,15 +9,15 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 
 ## Key details
 
-| Item | Details |
-| --- | --- |
-| **Provider** | The Bounty entity identified in the Agreement or applicable order form or invoice. |
-| **Customer** | The customer entity identified in the Agreement or applicable order form. |
-| **Service** | Bounty's B2B SaaS analytics and growth operations service, including its app, integrations, metrics, analyses, actions, agents, chat, API, CLI and related support. |
+| Item                     | Details                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Provider**             | The Bounty entity identified in the Agreement or applicable order form or invoice.                                                                                                                                                                                                                                                                                                |
+| **Customer**             | The customer entity identified in the Agreement or applicable order form.                                                                                                                                                                                                                                                                                                         |
+| **Service**              | Bounty's B2B SaaS analytics and growth operations service, including its app, integrations, metrics, analyses, actions, agents, chat, API, CLI and related support.                                                                                                                                                                                                               |
 | **Processing locations** | Australia and the United States. Primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. However, we create a storage bucket, secrets store and worker in the same cloud and region as your warehouse to process data there. Only aggregate anonymised data (e.g. a metric like “page view by day”) are cached out of your region |
-| **Security contact** | arran@bountygrowth.com |
-| **Subprocessors** | [View current Subprocessor list](https://docs.bountygrowth.com/subprocessors) |
-| **Security controls** | [View current security-control summary](https://docs.bountygrowth.com/security-controls) |
+| **Security contact**     | arran@bountygrowth.com                                                                                                                                                                                                                                                                                                                                                            |
+| **Subprocessors**        | [View current Subprocessor list](https://docs.bountygrowth.com/subprocessors)                                                                                                                                                                                                                                                                                                     |
+| **Security controls**    | [View current security-control summary](https://docs.bountygrowth.com/security-controls)                                                                                                                                                                                                                                                                                          |
 
 ## 1. Definitions
 
@@ -61,7 +61,7 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 
 **5.1 Notification.** Bounty will notify Customer without undue delay after becoming aware of a Security Incident and, where feasible, within 72. Notice will be sent to the Customer's designated account or security contact.
 
-**5.2 Response.** Bounty will take reasonable steps to contain, investigate, mitigate and remediate the Security Incident and will provide information reasonably available to Bounty that Customer needs to assess the incident and meet applicable notification obligations..
+**5.2 Response.** Bounty will take reasonable steps to contain, investigate, mitigate and remediate the Security Incident and will provide information reasonably available to Bounty that Customer needs to assess the incident and meet applicable notification obligations.
 
 **5.3 No admission.** Notification or assistance concerning a Security Incident is not an admission of fault or liability.
 
@@ -75,7 +75,7 @@ This Data Processing Addendum ("DPA") forms part of the agreement between Bounty
 
 ## 7. Overseas processing
 
-**7.1 Locations.** Customer authorises Bounty and its Subprocessors to handle Customer Personal Data in Australia, the United States, and the other Subprocessor locations identified on Bounty's current Subprocessor list. Bounty's primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. Customer-selected integrations may use the locations of those service
+**7.1 Locations.** Customer authorises Bounty and its Subprocessors to handle Customer Personal Data in Australia, the United States, and the other Subprocessor locations identified on Bounty's current Subprocessor list. Bounty's primary application and analytics data stores are hosted in AWS region us-east-2 (Ohio), United States. Customer-selected integrations may use the locations of those services.
 
 **7.2 Safeguards.** Bounty will take reasonable steps required of it under Applicable Privacy Law in relation to overseas recipients. Customer remains responsible for determining whether its disclosure or use of Customer Personal Data through the Service satisfies Customer's own overseas-disclosure obligations.
 
