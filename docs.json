@@ -2,12 +2,37 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
   "name": "Bounty Docs",
-  "favicon": "/favicon.ico",
+  "favicon": "/favicon.png",
+  "logo": "/images/bounty-logo.svg",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
+  "fonts": {
+    "body": {
+      "family": "Modern Gothic",
+      "source": "/fonts/ModernGothic-Regular.woff2",
+      "format": "woff2",
+      "weight": 400
+    },
+    "heading": {
+      "family": "Modern Gothic",
+      "source": "/fonts/ModernGothic-Medium.woff2",
+      "format": "woff2",
+      "weight": 500
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#F5F5EF",
+      "dark": "#F5F5EF"
+    }
+  },
   "description": "Bounty Docs is the public documentation site for Bounty.",
   "colors": {
-    "primary": "#1C7ED6",
-    "light": "#339AF0",
-    "dark": "#1864AB"
+    "primary": "#CC4700",
+    "light": "#FF5900",
+    "dark": "#993500"
   },
   "seo": {
     "indexing": "navigable",
