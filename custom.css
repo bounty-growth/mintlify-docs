@@ -1,0 +1,147 @@
+/* Bounty UI: packages/ui/foundations and packages/ui/text in the monorepo.
+   Keep selectors scoped to Mintlify's documented layout and component hooks. */
+@font-face {
+  font-family: "Modern Gothic";
+  src: url("/fonts/ModernGothic-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --bounty-shell: #f5f5ef;
+  --bounty-surface: #ffffff;
+  --bounty-surface-muted: #fcfcf8;
+  --bounty-foreground: rgba(0, 0, 0, 0.874);
+  --bounty-secondary: rgba(0, 0, 0, 0.584);
+  --bounty-border: rgba(0, 0, 0, 0.0706);
+  --bounty-hover: rgba(0, 0, 0, 0.0353);
+  --bounty-accent: #cc4700;
+  --bounty-accent-hover: #993500;
+  --bounty-accent-subtle: #ffe0cf;
+  --bounty-radius: 8px;
+}
+
+body {
+  color: var(--bounty-foreground);
+  font-family: "Modern Gothic", Arial, sans-serif;
+}
+
+#navbar,
+#sidebar,
+#mobile-nav,
+#mobile-nav-content {
+  background: var(--bounty-shell);
+}
+
+#navbar {
+  border-color: var(--bounty-border);
+}
+
+/* The supplied landscape artwork includes its own clear space. */
+.nav-logo {
+  width: 136px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+#sidebar .nav-logo {
+  width: 182px;
+}
+
+#content-area {
+  background: var(--bounty-surface);
+  border-radius: var(--bounty-radius);
+}
+
+#page-title {
+  color: var(--bounty-foreground);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+#content :is(h2, h3, h4, strong, th),
+:is(#sidebar, #mobile-nav) :is(h2, h3) {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+#content h2 {
+  font-size: 24px;
+}
+
+#content h3 {
+  font-size: 21px;
+}
+
+#content :is(p, li) {
+  color: var(--bounty-foreground);
+}
+
+#content :is(p, li) a {
+  color: var(--bounty-accent);
+  text-decoration-color: var(--bounty-accent);
+}
+
+#content :is(p, li) a:hover {
+  color: var(--bounty-accent-hover);
+}
+
+:is(#sidebar, #mobile-nav) a:hover {
+  background: var(--bounty-hover);
+}
+
+:is(#sidebar, #mobile-nav) a[aria-current="page"] {
+  background: var(--bounty-accent-subtle);
+  color: var(--bounty-accent);
+  font-weight: 500;
+}
+
+#search-bar-entry,
+#search-bar-entry-mobile {
+  background: var(--bounty-surface);
+  border: 1px solid var(--bounty-border);
+  border-radius: var(--bounty-radius);
+  box-shadow: none;
+}
+
+#content :is(.card, .accordion, .callout, .frame, .code-block),
+#pagination a {
+  border-radius: var(--bounty-radius);
+  box-shadow: none;
+}
+
+#content :is(.card, .accordion, .frame),
+#pagination a {
+  border-color: var(--bounty-border);
+}
+
+#content .card:hover,
+#pagination a:hover {
+  background: var(--bounty-surface-muted);
+}
+
+:is(a, button, input, textarea, summary):focus-visible {
+  outline: 2px solid var(--bounty-accent);
+  outline-offset: 3px;
+}
+
+#footer {
+  color: var(--bounty-secondary);
+  border-color: var(--bounty-border);
+}
+
+@media (min-width: 1024px) {
+  #content-area {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 1023px) {
+  #content-area {
+    padding: 24px 16px;
+  }
+}
