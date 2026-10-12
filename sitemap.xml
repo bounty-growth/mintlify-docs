@@ -19,40 +19,7 @@
     <loc>https://docs.bountygrowth.com/integrations/google-search-console</loc>
   </url>
   <url>
-    <loc>https://docs.bountygrowth.com/cli/overview</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/quickstart</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/installation</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/claude-codex</loc>
-  </url>
-  <url>
     <loc>https://docs.bountygrowth.com/mcp/overview</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/authentication</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/commands</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/skills/overview</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/skills/installing</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/skills/catalog</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/skills/workflows</loc>
-  </url>
-  <url>
-    <loc>https://docs.bountygrowth.com/cli/security</loc>
   </url>
   <url>
     <loc>https://docs.bountygrowth.com/legal</loc>

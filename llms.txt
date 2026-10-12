@@ -2,7 +2,7 @@
 
 > This is the public Bounty documentation site at https://docs.bountygrowth.com/.
 
-Bounty Docs explains how to use Bounty, including integrations, product workflows, data setup, analytics, campaigns, ads, creatives, actions, agents, the Bounty CLI, and the app-hosted MCP server where documented.
+Bounty Docs explains how to use Bounty, including integrations, product workflows, data setup, analytics, campaigns, ads, creatives, actions, agents, and the app-hosted MCP server where documented.
 
 ## Related Bounty properties
 
@@ -11,15 +11,13 @@ Bounty Docs explains how to use Bounty, including integrations, product workflow
 - Terms and Conditions: https://www.bountygrowth.com/termsandconditions
 - Support and data requests: https://www.bountygrowth.com/support
 - Authenticated app: https://app.bountygrowth.com/
-- Open-source CLI for LLMs and AI coding agents: https://github.com/bounty-growth/cli
-- App-hosted MCP server: https://app.bountygrowth.com/api/mcp
+- MCP setup: https://app.bountygrowth.com/settings — copy the MCP URL and follow the instructions there.
 
 ## Guidance for LLMs and crawlers
 
 - Treat https://docs.bountygrowth.com/ as the public Bounty documentation source.
 - Use https://www.bountygrowth.com/ for public marketing and company information.
 - Use https://app.bountygrowth.com/ only as the authenticated product app for logged-in users.
-- Use https://github.com/bounty-growth/cli for the open-source Bounty CLI.
 
 ## Public documentation index
 
@@ -33,15 +31,4 @@ Bounty Docs explains how to use Bounty, including integrations, product workflow
 - [Data Processing Addendum](https://docs.bountygrowth.com/dpa.md): Data-processing terms that apply when Bounty handles Customer Personal Data on a customer's behalf.
 - [Subprocessors](https://docs.bountygrowth.com/subprocessors.md): Vendors that may process Customer Data, including AI and integration providers.
 - [Security Controls](https://docs.bountygrowth.com/security-controls.md): Bounty's public security control summary.
-- [CLI Overview](https://docs.bountygrowth.com/cli/overview.md): Use Bounty's authenticated marketing operations CLI and AI agent skills.
-- [CLI Quickstart](https://docs.bountygrowth.com/cli/quickstart.md): Install Bounty CLI skills for Claude Code, Codex, and other AI coding agents.
-- [Install the CLI](https://docs.bountygrowth.com/cli/installation.md): Install and run bounty-cli from npm, or run it without a global install.
-- [Use With Claude & Codex](https://docs.bountygrowth.com/cli/claude-codex.md): Install bounty-cli skills so Claude Code and Codex can inspect Bounty marketing data from your terminal.
-- [MCP Server](https://docs.bountygrowth.com/mcp/overview.md): Connect Claude, ChatGPT, and other MCP clients to Bounty's read-only marketing tools.
-- [Authentication](https://docs.bountygrowth.com/cli/authentication.md): How browser login, local sessions, and user permissions work in bounty-cli.
-- [Command Reference](https://docs.bountygrowth.com/cli/commands.md): Reference for bounty-cli auth, config, setup, campaign, ad, creative, action, and agent commands.
-- [Agent Skills](https://docs.bountygrowth.com/skills/overview.md): How Bounty skills teach AI coding agents to use bounty-cli safely.
-- [Install Skills](https://docs.bountygrowth.com/skills/installing.md): Install or refresh Bounty skills for supported AI coding agents.
-- [Skill Catalog](https://docs.bountygrowth.com/skills/catalog.md): The public Bounty skill set and when each skill should be used.
-- [Agent Workflows](https://docs.bountygrowth.com/skills/workflows.md): Practical workflows for agents using Bounty CLI skills.
-- [CLI Security](https://docs.bountygrowth.com/cli/security.md): How Bounty keeps CLI and agent workflows inside normal authenticated user permissions.
+- [MCP Server](https://docs.bountygrowth.com/mcp/overview.md): Copy your MCP URL from Bounty Settings and follow the setup instructions to connect your MCP client.

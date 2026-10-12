@@ -1,8 +1,10 @@
 # Bounty Docs
 
-Public documentation for the Bounty app, marketing operations CLI, MCP server, and AI agent skills.
+Public documentation for the Bounty app and MCP server.
 
-Bounty helps teams connect marketing data, inspect performance, manage growth actions, run agents, and use terminal-safe CLI workflows with normal user permissions.
+Bounty helps teams connect marketing data, inspect performance, manage growth actions, run agents, and query data through the MCP server with normal user permissions.
+
+For MCP setup, open [Bounty Settings](https://app.bountygrowth.com/settings), copy the MCP URL, and follow the instructions there.
 
 ## Styling
 
