@@ -9,7 +9,7 @@ Bounty maintains security controls designed to protect customer data, personal d
 
 ## Security Contact
 
-Security issues can be reported to [arran@bountygrowth.com](mailto:arran@bountygrowth.com).
+Security issues can be reported to [security@bountygrowth.com](mailto:security@bountygrowth.com).
 
 ## Authentication And Access
 

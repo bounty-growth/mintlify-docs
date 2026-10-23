@@ -9,7 +9,7 @@ Bounty uses third-party vendors and subprocessors to provide, host, secure, moni
 
 For Bounty's broader vendor review process, see [Vendor Management](/vendor-management).
 
-Customers can contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com) with questions about subprocessors.
+Customers can contact [security@bountygrowth.com](mailto:security@bountygrowth.com) with questions about subprocessors.
 
 The **Countries where data may be processed** columns declare where Customer Data may be stored, accessed remotely, or otherwise processed, including confirmed downstream processing. They do not identify a processor's registered address or country of registration, and do not represent an exhaustive list of each provider's global operations.
 

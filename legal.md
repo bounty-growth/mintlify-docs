@@ -23,4 +23,4 @@ Signed customer agreements, order forms, and data-processing addenda control whe
 
 ## Contact
 
-For legal, privacy, security, or data-deletion requests, contact [arran@bountygrowth.com](mailto:arran@bountygrowth.com).
+For legal, privacy, security, or data-deletion requests, contact [security@bountygrowth.com](mailto:security@bountygrowth.com).
