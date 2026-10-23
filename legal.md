@@ -17,7 +17,6 @@ Bounty Growth Pty Ltd (ABN 49 697 769 761) publishes its operative Privacy Polic
 - [Subprocessors](/subprocessors): Vendors and subprocessors that may process Customer Data.
 - [Vendor Management](/vendor-management): Bounty's risk-based third-party review process.
 - [Security Controls](/security-controls): Authentication, access, data protection, backup, vulnerability management, and vendor controls.
-- [CLI Security](/cli/security): Security behavior for Bounty CLI and agent workflows.
 
 Signed customer agreements, order forms, and data-processing addenda control where they conflict with general public materials.
 

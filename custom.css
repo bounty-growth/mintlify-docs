@@ -136,7 +136,17 @@ body {
 
 @media (min-width: 1024px) {
   #content-area {
+    /* Use the space between navigation and the table of contents instead of
+       Maple's 576px / 672px reading-column cap. */
+    width: 100%;
+    max-width: 960px;
     padding: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #content-area {
+    width: calc(100% - 20rem);
   }
 }
 

@@ -1,17 +1,17 @@
 ---
 title: "MCP Server"
-description: "Connect Claude, ChatGPT, and other MCP clients to Bounty's read-only marketing tools."
+description: "Copy your MCP URL from Bounty Settings and follow the setup instructions to connect your MCP client."
 ---
 
 Bounty exposes a read-only Model Context Protocol server for marketing analysis. It gives MCP clients a curated way to inspect campaign, ad, creative, metric, and action data using the authenticated user's normal Bounty permissions.
 
-The production MCP server URL is:
+## Connect To Bounty
 
-```text
-https://app.bountygrowth.com/api/mcp
-```
+1. Sign in and open [Bounty Settings](https://app.bountygrowth.com/settings).
+2. Copy the MCP URL shown in Settings.
+3. Follow the instructions there to connect your MCP client.
 
-The server uses Streamable HTTP. It is a remote MCP server, not a local `stdio` server.
+Settings provides the URL and setup instructions to use for your connection.
 
 ## What The MCP Server Can Access
 
@@ -26,137 +26,6 @@ The MCP server can read organization-scoped Bounty data that the authenticated u
 - Existing Bounty actions.
 
 It does not expose raw warehouse SQL, arbitrary table dumps, arbitrary Python execution, infrastructure credentials, or write actions.
-
-## Set Up In Claude Code
-
-Claude Code can connect to Bounty as a remote HTTP MCP server:
-
-```bash
-claude mcp add --transport http bounty https://app.bountygrowth.com/api/mcp
-```
-
-Then, inside Claude Code, run:
-
-```text
-/mcp
-```
-
-Choose the `bounty` server and follow the browser login flow. Bounty will ask you to sign in if needed, then approve MCP access for the local Claude Code client.
-
-For client-specific command details, see Claude Code's [MCP documentation](https://code.claude.com/docs/en/mcp).
-
-After authentication, ask Claude Code questions such as:
-
-- "Use Bounty MCP to rank Google Ads campaigns by CAC for the last 30 days."
-- "Find saved metrics related to CAC, then show the daily trend for the best matching metric."
-- "Analyze campaign `facebook:1234567890` for the last 7 days and summarize the evidence."
-
-## Set Up In Claude Cowork
-
-Claude's hosted custom connectors, including Cowork connectors, use remote MCP servers from Anthropic's cloud infrastructure. Add Bounty as a custom web connector using:
-
-```text
-https://app.bountygrowth.com/api/mcp
-```
-
-For individual plans, add it from Claude's connector settings. For Team or Enterprise plans, an owner typically adds the custom connector for the organization first, then each user connects it from their own connector settings. Cowork uses the same remote connector setup.
-
-Hosted Claude and Cowork connectors use Claude's hosted OAuth callback URL. Bounty supports that hosted callback as well as Claude Code's local loopback callback flow.
-
-For client-specific UI details, see Claude's [remote MCP custom connector guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
-
-## Set Up In ChatGPT
-
-ChatGPT can use remote MCP servers through custom apps in developer mode. Create a custom app from ChatGPT's Apps settings and use the Bounty MCP server URL:
-
-```text
-https://app.bountygrowth.com/api/mcp
-```
-
-Use OAuth authentication. Bounty's MCP OAuth flow is a public-client authorization code flow with PKCE and does not require a shared client secret.
-
-Hosted ChatGPT apps use a hosted OAuth callback URL. Bounty supports ChatGPT's hosted connector callback flow with OAuth and PKCE.
-
-For client-specific UI details, see OpenAI's [ChatGPT developer mode guide](https://developers.openai.com/api/docs/guides/developer-mode).
-
-## How Authentication Works
-
-The MCP endpoint requires a bearer token:
-
-```http
-Authorization: Bearer <mcp_access_token>
-```
-
-When a client connects without a valid token, Bounty returns `401 Unauthorized` with a `WWW-Authenticate` header pointing to its protected resource metadata.
-
-Bounty exposes OAuth discovery metadata at:
-
-```text
-https://app.bountygrowth.com/.well-known/oauth-protected-resource
-https://app.bountygrowth.com/.well-known/oauth-authorization-server
-```
-
-The OAuth endpoints are:
-
-| Endpoint | Purpose |
-| --- | --- |
-| `GET /cli/authorize` | Browser authorization page. |
-| `POST /api/mcp/oauth/register` | Dynamically registers an allowed public PKCE MCP client. |
-| `POST /api/cli/authorize` | Creates a one-time MCP authorization code after the user approves access. |
-| `POST /api/mcp/oauth/token` | Exchanges an MCP authorization code and PKCE verifier for an MCP bearer token. |
-| `GET`, `POST`, `DELETE /api/mcp` | Streamable HTTP MCP endpoint. |
-
-The authorization server metadata advertises the dynamic registration endpoint as `registration_endpoint`. The token flow uses the `authorization_code` grant, PKCE `S256`, and the `mcp:read` scope. The resulting MCP bearer token is audience-bound to `api/mcp` and wraps the user's Bounty session. It expires with the underlying session; when it expires, reconnect the MCP client to authorize again.
-
-Bounty never asks the MCP client for an organization id, schema name, warehouse name, connection string, or platform credential. Organization and data scope are always derived from the authenticated Bounty user.
-
-## Dynamic Client Registration
-
-`POST /api/mcp/oauth/register` supports allowed public PKCE MCP clients, including MCP Inspector, Claude Code, hosted Claude and Cowork connectors, and ChatGPT custom apps. Dynamic registration does not require a pre-issued Bounty client id, and Bounty does not issue a client secret.
-
-Registration accepts:
-
-- HTTP redirect URIs on `localhost` or `127.0.0.1` for local clients such as MCP Inspector and Claude Code.
-- `https://chatgpt.com/connector/oauth/{callback_id}` and the legacy `https://chatgpt.com/connector_platform_oauth_redirect` callback for ChatGPT.
-- `https://claude.ai/api/mcp/auth_callback` for hosted Claude and Cowork connectors.
-- Grant types that include `authorization_code`.
-- Response types that include `code`.
-- Scope unset or limited to `mcp:read`.
-
-Other HTTPS redirect URIs are rejected. Bounty also applies the same hosted callback allowlist when the browser authorization page and `/api/cli/authorize` resolve the request to the MCP audience; plain Bounty CLI authorization remains local-loopback only.
-
-Example registration payload:
-
-```json
-{
-  "redirect_uris": ["http://localhost:6274/oauth/callback"],
-  "token_endpoint_auth_method": "none",
-  "grant_types": ["authorization_code"],
-  "response_types": ["code"],
-  "client_name": "MCP Inspector",
-  "scope": "mcp:read"
-}
-```
-
-The response includes a `client_id`, `client_id_issued_at`, and echoed client metadata.
-
-## Set Up In MCP Inspector
-
-In MCP Inspector, use the Streamable HTTP server URL:
-
-```text
-https://app.bountygrowth.com/api/mcp
-```
-
-The Inspector should discover Bounty's protected resource metadata, register a local public PKCE client, open the Bounty login and approval flow in the browser, exchange the code for an MCP token, then call the server with that bearer token.
-
-For local development against a Next.js server bound to `0.0.0.0:3000`, use the local app URL that users can open:
-
-```text
-http://localhost:3000/api/mcp
-```
-
-Bounty's MCP metadata normalizes local development origins so discovery documents advertise `localhost:3000` instead of `0.0.0.0:3000`.
 
 ## Date Ranges
 
